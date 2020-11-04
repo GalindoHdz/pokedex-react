@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addLikes } from '../controllers/addLike';
 
 export const Card = (props) => {
-    const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${props.image}`;
+    const list = useSelector((state) => state.Likes.list);
+    const pokedex = useSelector((state) => state.Pokedex.list);
+    const dispatch = useDispatch();
+    const [state, setState] = useState({
+        id: pokedex[props.index].id,
+        name: pokedex[props.index].name,
+        number: pokedex[props.index].number,
+        image: pokedex[props.index].image,
+        types: pokedex[props.index].types,
+        like: pokedex[props.index].like,
+    });
+    const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${state.image}`;
+
+    const addLike = () => {
+        addLikes(state.id, list, pokedex, dispatch);
+        setState({
+            ...state,
+            like: !state.like,
+        });
+    };
 
     return (
         <div>
-            {props.like ? <p>like</p> : <p>no like</p>}
+            {state.like ? (
+                <button onClick={addLike}>removeLike</button>
+            ) : (
+                <button onClick={addLike}>addLike</button>
+            )}
             <img src={image} alt='pokemon' />
-            <p>{props.number}</p>
-            <p>{props.name}</p>
-            {props.types.map((type) => (
-                <p key={`${props.id}+${type}`}>{type}</p>
+            <p>{state.number}</p>
+            <p>{state.name}</p>
+            {state.types.map((type) => (
+                <p key={`${state.id}+${type}`}>{type}</p>
             ))}
         </div>
     );

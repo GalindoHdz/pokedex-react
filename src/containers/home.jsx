@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addPokedex } from '../controllers/addPokedex';
+import { Filter } from '../components/filter';
 import { Card } from '../components/card';
 
 export const Home = () => {
@@ -8,7 +9,7 @@ export const Home = () => {
     const index = useSelector((state) => state.Pokedex.index);
     const dispatch = useDispatch();
     const [state, setState] = useState({
-        index: 21,
+        index: 11,
     });
 
     useEffect(() => {
@@ -22,28 +23,28 @@ export const Home = () => {
     }, [list, index, dispatch]);
 
     const load = async () => {
-        if (state.index < index) {
-            console.log('incrementar index local', state.index, index);
+        if (state.index < 887) {
             setState({
-                index: state.index + 20,
+                index: state.index + 12,
             });
         } else {
-            console.log('incrementar index local y global', state.index, index);
-            await addPokedex(index, list, dispatch);
             setState({
-                index: state.index + 20,
+                index: state.index + 5,
             });
         }
     };
 
     return (
         <div>
+            <Filter />
             {list.map((element, index) =>
                 index <= state.index ? (
                     <Card key={element.id} index={element.id - 1} />
                 ) : null
             )}
-            <button onClick={load}>cargar mas..</button>
+            {state.index < 892 ? (
+                <button onClick={load}>cargar mas..</button>
+            ) : null}
         </div>
     );
 };

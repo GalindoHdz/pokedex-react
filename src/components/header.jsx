@@ -3,19 +3,17 @@ import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
     return (
-        <header>
+        <header className='header'>
             <NavLink
                 exact
                 to='/'
-                style={{ textDecoration: 'none' }}
-                activeClassName='header_button_active'>
+                style={{ textDecoration: 'none' }}>
                 Home
             </NavLink>
             <NavLink
                 exact
                 to='/Likes'
-                style={{ textDecoration: 'none' }}
-                activeClassName='header_button_active'>
+                style={{ textDecoration: 'none' }}>
                 Likes
             </NavLink>
         </header>

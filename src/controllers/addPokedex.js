@@ -4,13 +4,23 @@ export const addPokedex = async (index, data, dispatch) => {
     while (index < 892) {
         let list = [];
         let i = index;
-        index < 800 ? (index += 100) : (index += 90);
+        index < 800 ? (index += 100) : (index += 85);
+
+        console.log(index);
 
         for (i; i <= index && i <= 893; i++) {
             const basic = await axiosConfig.get(`/pokemon/${i}/`);
             const str = '' + i;
             const pad = '000';
             const number = pad.substring(0, pad.length - str.length) + str;
+            let chain = await axiosConfig.get(`/pokemon-species/${i}/`);
+            chain = chain.data.evolution_chain.url
+            chain = await axiosConfig.get(chain);
+            chain = chain.data.chain;
+            chain = extract(chain);
+            let description = await axiosConfig.get(`/pokemon-species/${i}/`);
+            description = description.data.flavor_text_entries
+            description = description[0].flavor_text;
 
             const pokemon = {
                 number: number,
@@ -25,6 +35,8 @@ export const addPokedex = async (index, data, dispatch) => {
                     value: stat.base_stat,
                 })),
                 like: false,
+                chainEvolution: chain,
+                description
             };
 
             list.push(pokemon);
@@ -44,3 +56,20 @@ export const addPokedex = async (index, data, dispatch) => {
         });
     }
 };
+
+const extract = (chain) => {
+    let evoChain = [];
+
+    evoChain.push({
+        "name": chain.species.name
+    });
+
+    if(chain.evolves_to){
+        Object.entries(chain.evolves_to)
+        .map(element => evoChain.push({
+            "evolution": extract(element[1])
+        }));
+    }
+    
+    return evoChain;
+}

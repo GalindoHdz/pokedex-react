@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLikes } from '../controllers/addLike';
+import { NavLink } from 'react-router-dom'
 
 export const Card = (props) => {
     const list = useSelector((state) => state.Likes.list);
@@ -25,18 +26,22 @@ export const Card = (props) => {
     };
 
     return (
-        <div>
-            {state.like ? (
-                <button onClick={addLike}>removeLike</button>
-            ) : (
-                <button onClick={addLike}>addLike</button>
-            )}
+        <>
+        {state.like ? (
+            <button onClick={addLike}>removeLike</button>
+        ) : (
+            <button onClick={addLike}>addLike</button>
+        )}
+        <NavLink exact
+        to={`/Pokemon/${state.name}`}
+        style={{ textDecoration: 'none' }}>
             <img src={image} alt='pokemon' />
             <p>{state.number}</p>
             <p>{state.name}</p>
             {state.types.map((type) => (
                 <p key={`${state.id}+${type}`}>{type}</p>
             ))}
-        </div>
+        </NavLink>
+        </>
     );
 };

@@ -4,9 +4,7 @@ export const addPokedex = async (index, data, dispatch) => {
     while (index < 892) {
         let list = [];
         let i = index;
-        index < 800 ? (index += 100) : (index += 85);
-
-        console.log(index);
+        index < 800 ? (index += 100) : (index += 84);
 
         for (i; i <= index && i <= 893; i++) {
             const basic = await axiosConfig.get(`/pokemon/${i}/`);

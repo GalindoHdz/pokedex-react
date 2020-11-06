@@ -1,11 +1,1 @@
-export const sortAZ = (pokedex) => {
-    const sorted = pokedex.sort((a, b) => {
-        if(a.name > b.name){
-            return 1
-        }
-
-        return -1
-    });
-
-    console.log(sorted);
-}
+export const sortAZ = (pokedex) => pokedex.sort((a, b) => (a.name > b.name ? 1 : -1))

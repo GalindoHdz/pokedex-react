@@ -24,19 +24,20 @@ export const Home = () => {
     };
 
     return (
-        <div>
+        <div className='bg-gray-700 pt-10'>
             <Filter />
             <Search />
             <Sort />
-            <br/>
-            {list.map((element, index) =>
-                index <= state.index ? (
-                    <Card key={element.id} index={element.id - 1} />
-                ) : null
-            )}
-            {state.index < 892 ? (
-                <button onClick={load}>cargar mas..</button>
-            ) : null}
+            <div className='flex flex-wrap justify-center'>
+                {list.map((element, index) =>
+                    index <= state.index ? (
+                        <Card key={element.id} index={element.id - 1} />
+                    ) : null
+                )}
+                {state.index < 892 ? (
+                    <button onClick={load}>cargar mas..</button>
+                ) : null}
+            </div>
         </div>
     );
 };

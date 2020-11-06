@@ -26,22 +26,22 @@ export const Card = (props) => {
     };
 
     return (
-        <>
-        {state.like ? (
-            <button onClick={addLike}>removeLike</button>
-        ) : (
-            <button onClick={addLike}>addLike</button>
-        )}
-        <NavLink exact
-        to={`/Pokemon/${state.name}`}
-        style={{ textDecoration: 'none' }}>
-            <img src={image} alt='pokemon' />
-            <p>{state.number}</p>
-            <p>{state.name}</p>
-            {state.types.map((type) => (
-                <p key={`${state.id}+${type}`}>{type}</p>
-            ))}
-        </NavLink>
-        </>
+        <div className='max-w-sm rounded overflow-hidden shadow-lg bg-white mx-2 my-2'>
+            {state.like ? (
+                <button onClick={addLike}>removeLike</button>
+            ) : (
+                <button onClick={addLike}>addLike</button>
+            )}
+            <NavLink exact
+            to={`/Pokemon/${state.name}`}
+            style={{ textDecoration: 'none' }}>
+                <img src={image} alt='pokemon' />
+                <p>{state.number}</p>
+                <p>{state.name}</p>
+                {state.types.map((type) => (
+                    <p key={`${state.id}+${type}`}>{type}</p>
+                ))}
+            </NavLink>
+        </div>
     );
 };

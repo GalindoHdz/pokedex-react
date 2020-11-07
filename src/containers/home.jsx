@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Search } from '../components/search';
-// import { Filter } from '../components/filter';
+import { Filter } from '../components/filter';
 import { Sort } from '../components/sort';
 import { Card } from '../components/card';
 
@@ -22,10 +22,8 @@ export const Home = () => {
           index: state.index + 5,
         });
   };
-
+  
   const updatePokedex = (list) => {
-    console.log('sort', list);
-
     setState({
       ...state,
       pokedex: list,
@@ -34,15 +32,13 @@ export const Home = () => {
 
   return (
     <div className='w-full h-full pt-11 flex flex-wrap justify-center bg-gray-700'>
-      {/* <Filter />*/}
       <div className='w-4/5 pt-16 flex flex-wrap justify-center bg-white'>
         <h1 className='pb-4 text-2xl font-bold text-gray-800'>Pokedex</h1>
         <Search list={state.pokedex} handledSearch={updatePokedex} />
+        <Filter list={state.pokedex} handledFilter={updatePokedex}/>
         <Sort list={state.pokedex} handledSort={updatePokedex} />
-        {state.pokedex.map((element, index) =>
-          index <= state.index ? (
+        {state.pokedex.map((element) =>
             <Card key={element.id} index={element.id - 1} />
-          ) : null
         )}
       </div>
       <div className='w-full py-10 flex flex-wrap justify-center'>

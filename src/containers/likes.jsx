@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Search } from '../components/search';
+import { Sort } from '../components/sort';
 import { Card } from '../components/card';
 
 export const Likes = () => {
@@ -33,6 +34,7 @@ export const Likes = () => {
       <div className='w-4/5 pt-16 flex flex-wrap justify-center bg-white'>
         <h1 className='pb-4 text-2xl font-bold text-gray-800'>Pokedex</h1>
         <Search list={state.likes} handledSearch={updatePokedex} />
+        <Sort list={state.likes} handledSort={updatePokedex} />
         {state.likes.map((element) => (
           <Card key={element.id} index={element.id - 1} />
         ))}

@@ -1,10 +1,26 @@
-export const filterPokedex = (pokedex, options) => {
-    let filtered = pokedex
-        .filter(pokemon => {
-            return pokemon.types.every(type => options.includes(type))
-        })
+export const filterPokedex = (pokedex, filters) => {
+    // let filtered = pokedex
+    //     .filter(pokemon => {
+    //         return pokemon.types.some(type => filters.includes(type))
+    //     })
 
-    console.log(filtered);
+    let filtered = pokedex;
 
-    return filtered
+    Object.values(filters).forEach(
+        filter => {
+            filtered = filtered.filter(
+                pokemon => {
+                    return pokemon.types.some(type => {
+                        return filter.includes(type)
+                    });
+                }
+            );
+
+            console.log(filtered)
+        }
+    )    
+    
+    // console.log(pokedex);
+
+    return filtered;
 }

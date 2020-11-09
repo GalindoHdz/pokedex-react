@@ -28,20 +28,31 @@ export const Search = (props) => {
   };
 
   return (
-    <div className='w-full h-12 py-10 flex flex-wrap justify-center content-center bg-gray-700'>
-      <label className='mx-2 text-2xl text-white '>Name or number</label>
-      <input
-        type='text'
-        name='pokemon'
-        onChange={handledChange}
-        onKeyPress={handledKeyPress}
-        className='mx-2 h-10 rounded-md focus:outline-none px-2'
-      />
-      <button
-        onClick={find}
-        className='w-10 h-10 flex flex-wrap justify-center content-center text-2xl bg-orange-500 text-white'>
-        <BiSearch />
-      </button>
+    <div className='search-container'>
+      <div className='search'>
+        <label>Nombre o número</label>
+        <div>
+          <input
+            type='text'
+            name='pokemon'
+            onChange={handledChange}
+            onKeyPress={handledKeyPress}
+          />
+          <button onClick={find}>
+            <BiSearch />
+          </button>
+        </div>
+        <p>
+          ¡Usa la búsqueda avanzada para encontrar Pokémon por su tipo,
+          debilidad, habilidad y demás datos!
+        </p>
+      </div>
+      <div className='search-text'>
+        <p>
+          Busca un Pokémon por su nombre o usando su número de la Pokédex
+          Nacional.
+        </p>
+      </div>
     </div>
   );
 };

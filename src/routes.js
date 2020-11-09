@@ -7,19 +7,18 @@ import { Likes } from './containers/likes';
 import { Pokemon } from './containers/pokemon';
 
 export const Routes = () => {
-  const list = useSelector((state) => state.Pokedex.list);
-  const index = useSelector((state) => state.Pokedex.index);
+  const pokedex = useSelector((state) => state.Pokedex);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getList = async () => {
-      if (list.length < 100) {
-        await addPokedex(index, list, dispatch);
+    const getPokedex = async () => {
+      if (pokedex.length < 893) {
+        await addPokedex(pokedex, dispatch);
       }
     };
 
-    getList();
-  }, [list, index, dispatch]);
+    getPokedex();
+  }, [pokedex, dispatch]);
 
   return (
     <Switch>

@@ -3,19 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
-    <header className='bg-white fixed w-full flex flex-wrap justify-center shadow-xl z-10'>
-      <NavLink
-        exact
-        to='/'
-        className='px-10 py-3 text-black text-sm'
-        activeClassName='bg-red-600 text-white'>
-        Home
+    <header className='header'>
+      <NavLink exact to='/' activeClassName='header-active-button'>
+        Pokédex
       </NavLink>
-      <NavLink
-        exact
-        to='/Likes'
-        className='px-10 py-3 text-black text-sm'
-        activeClassName='bg-red-600 text-white'>
+      <NavLink exact to='/Likes' activeClassName='header-active-button'>
         Likes
       </NavLink>
     </header>

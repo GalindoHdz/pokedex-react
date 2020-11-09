@@ -35,9 +35,9 @@ export const Likes = () => {
         <h1 className='pb-4 text-2xl font-bold text-gray-800'>Pokedex</h1>
         <Search list={state.likes} handledSearch={updatePokedex} />
         <Sort list={state.likes} handledSort={updatePokedex} />
-        {state.likes.map((element) => (
+        {/* {state.likes.map((element) => (
           <Card key={element.id} index={element.id - 1} />
-        ))}
+        ))} */}
       </div>
       <div className='w-full py-10 flex flex-wrap justify-center'>
         {state.index < 892 ? (

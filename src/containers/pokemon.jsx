@@ -5,7 +5,7 @@ import { addLikes } from '../controllers/addLike';
 export const Pokemon = (props) => {
     const list = useSelector((state) => state.Likes.list);
     const dispatch = useDispatch();
-    const pokedex = useSelector((state) => state.Pokedex.list);
+    const pokedex = useSelector((state) => state.Pokedex);
     const pokemon = pokedex.find((element) => element.name === props.name);
     const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.image}`;                   
     const [state, setState] = useState({

@@ -11,12 +11,12 @@ export const addLikes = (id, list, pokedex, dispatch) => {
 
     dispatch({
       type: 'ADD_LIKES',
-      payload: { value: { list } },
+      payload: list,
     });
 
     dispatch({
       type: 'ADD_LIST_POKEDEX',
-      payload: { value: { list: pokedex } },
+      payload: pokedex,
     });
 
     return;
@@ -28,11 +28,11 @@ export const addLikes = (id, list, pokedex, dispatch) => {
 
   dispatch({
     type: 'ADD_LIKES',
-    payload: { value: { list } },
+    payload: list,
   });
 
   dispatch({
     type: 'ADD_LIST_POKEDEX',
-    payload: { value: { list: pokedex } },
+    payload: pokedex,
   });
 };

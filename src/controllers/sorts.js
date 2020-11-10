@@ -16,4 +16,4 @@ export const sortWeightBottom = (list) =>
 
 export const sortWeightTop = (list) => list.sort((a, b) => b.weight - a.weight);
 
-export const sortRandom = (list) => list.sort(() => Math.random - 0.5);
+export const sortRandom = (list) => list.sort(() => 0.5 - Math.random());

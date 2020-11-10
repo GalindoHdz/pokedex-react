@@ -10,6 +10,7 @@ import {
   sortWeightTop,
   sortRandom,
 } from '../controllers/sorts';
+import { AiOutlineReload } from 'react-icons/ai'
 
 export const Sort = (props) => {
   const [list] = useState(props.list);
@@ -38,28 +39,31 @@ export const Sort = (props) => {
   };
 
   const surprise = () => {
-    sortRandom(list);
+    props.handledSort(sortRandom(list));
   };
 
   return (
-    <div className='w-full h-20 flex flex-wrap justify-center content-center  bg-teal-500'>
-      <button
-        onClick={surprise}
-        className='mx-10 px-5 py-3 rounded-md text-white font-semibold bg-blue-500 hover:bg-blue-600 focus:outline-none'>
-        Surprise me!!
-      </button>
-      <div className='mx-10 flex flex-wrap justify-center content-center'>
+    <div className='sort'>
+      <div>
+        <button
+          onClick={surprise}
+          className=''>
+            <AiOutlineReload />
+            <p>
+              ¡Sorpréndeme!
+            </p>
+        </button>
         <select name='select' id='select' onChange={handledChange}>
           <option value=''>Ordenar por...</option>
-          <option value='bottom'>bottom</option>
-          <option value='top'>top</option>
-          <option value='AZ'>AZ</option>
-          <option value='ZA'>ZA</option>
-          <option value='heightBottom'>heightBottom</option>
-          <option value='heightTop'>heightTop</option>
-          <option value='weigthBottom'>weigthBottom</option>
-          <option value='weigthTop'>weigthTop</option>
-        </select>
+          <option value='bottom'>Numero inferior</option>
+          <option value='top'>Numero superior</option>
+          <option value='AZ'>A-Z</option>
+          <option value='ZA'>Z-A</option>
+          <option value='heightBottom'>Tamaño inferior</option>
+          <option value='heightTop'>Tamaño superior</option>
+          <option value='weigthBottom'>Peso inferior</option>
+          <option value='weigthTop'>Peso superior</option>
+      </select>
       </div>
     </div>
   );

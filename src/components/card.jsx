@@ -6,8 +6,8 @@ import { BiHeart } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
 
 export const Card = (props) => {
-  const listLikes = useSelector((state) => state.Likes.list);
-  const pokedex = useSelector((state) => state.Pokedex.list);
+  const likes = useSelector((state) => state.Likes);
+  const pokedex = useSelector((state) => state.Pokedex);
   const dispatch = useDispatch();
   const [state, setState] = useState({
     id: pokedex[props.index].id,
@@ -20,7 +20,7 @@ export const Card = (props) => {
   const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${state.image}`;
 
   const addLike = () => {
-    addLikes(state.id, listLikes, pokedex, dispatch);
+    addLikes(state.id, likes, pokedex, dispatch);
     setState({
       ...state,
       like: !state.like,
@@ -28,34 +28,34 @@ export const Card = (props) => {
   };
 
   return (
-    <div className='w-64 mx-2 my-2 rounded overflow-hidden shadow-xl bg-white'>
+    <div className='card'>
       <NavLink exact to={`/Pokemon/${state.name}`}>
-        <img src={image} alt='pokemon' className='bg-gray-400' />
-        <p className='mx-4 my-2 text-sm font-bold text-gray-600'>
-          N.°{state.number}
-        </p>
-        <p className='mx-4 my-0 text-2xl font-bold text-gray-900'>
-          {state.name}
-        </p>
-        <div className='w-full h-10 flex flex-wrap content-center'>
-          {state.types.map((type) => (
-            <p
-              className={`w-20 ml-4 rounded flex flex-wrap content-center justify-center text-xs ${type}`}
-              key={`${state.id}+${type}`}>
-              {type}
-            </p>
-          ))}
+        <img src={image} alt='pokemon'/>
+        <div>
+          <h5>
+            N.°{state.number}
+          </h5>
+          <h3>
+            {state.name}
+          </h3>
+          <div>
+            {state.types.map((type) => (
+              <p
+                className={type}
+                key={`${state.id} ${type}`}>
+                {type}
+              </p>
+            ))}
+          </div>
         </div>
       </NavLink>
-      <div className='flex flex-wrap justify-end'>
+      <div>
         {state.like ? (
-          <button onClick={addLike} className='m-3 text-2xl focus:outline-none'>
+          <button onClick={addLike}>
             <FaHeart />
           </button>
         ) : (
-          <button
-            onClick={addLike}
-            className='m-3 text-2xl focus:outline-none '>
+          <button onClick={addLike}>
             <BiHeart />
           </button>
         )}

@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Search } from '../components/search';
+import { Filter } from '../components/filter';
 import { Sort } from '../components/sort';
-import { Card } from '../components/card';
+import { List } from '../components/list';
+import bg_black from '../assets/images/bg-black.png';
+import bg_white from '../assets/images/bg-white.png';
 
 export const Likes = () => {
   const [state, setState] = useState({
-    index: 11,
-    likes: useSelector((state) => state.Likes.list),
+    likes: useSelector((state) => state.Likes),
   });
-
-  const load = async () => {
-    state.index < 887
-      ? setState({
-          ...state,
-          index: state.index + 12,
-        })
-      : setState({
-          ...state,
-          index: state.index + 5,
-        });
-  };
 
   const updatePokedex = (list) => {
     setState({
@@ -30,23 +20,13 @@ export const Likes = () => {
   };
 
   return (
-    <div className='w-full h-full pt-11 flex flex-wrap justify-center bg-gray-700'>
-      <div className='w-4/5 pt-16 flex flex-wrap justify-center bg-white'>
-        <h1 className='pb-4 text-2xl font-bold text-gray-800'>Pokedex</h1>
+    <div className='background' style={{ backgroundImage: `url(${bg_black})` }}>
+      <div className='container' style={{ backgroundImage: `url(${bg_white})` }}>
+        <h1>Likes</h1>
         <Search list={state.likes} handledSearch={updatePokedex} />
+        <Filter list={state.likes} handledFilter={updatePokedex} />
         <Sort list={state.likes} handledSort={updatePokedex} />
-        {/* {state.likes.map((element) => (
-          <Card key={element.id} index={element.id - 1} />
-        ))} */}
-      </div>
-      <div className='w-full py-10 flex flex-wrap justify-center'>
-        {state.index < 892 ? (
-          <button
-            onClick={load}
-            className='px-5 py-3 rounded-md text-white font-semibold bg-blue-500 hover:bg-blue-600 focus:outline-none'>
-            Load more Pokemons
-          </button>
-        ) : null}
+        <List list={state.likes} />
       </div>
     </div>
   );

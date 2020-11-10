@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { filterPokedex } from '../controllers/filterPokedex';
 import { BiSearch } from 'react-icons/bi';
+import { IoIosArrowDropupCircle, IoIosArrowDropdownCircle } from 'react-icons/io';
 
 export const Filter = (props) => {
   const [list] = useState(props.list);
@@ -18,16 +19,16 @@ export const Filter = (props) => {
     ground: false,
     ice: false,
     normal: false,
-    poision: false,
+    poison: false,
     psychic: false,
     rock: false,
     steel: false,
     water: false,
   });
+  
   const [classFilter, setClassFilter] = useState({
     status: false,
-    filter_show: 'filter-hide',
-    title: 'Mostrar búsqueda avanzada',
+    filter_show: 'filter_hide',
   });
 
   const handleToggle = ({ target }) => {
@@ -57,13 +58,11 @@ export const Filter = (props) => {
           ...classFilter,
           status: false,
           filter_show: 'filter_hide',
-          title: 'Mostrar búsqueda avanzada',
         })
       : setClassFilter({
           ...classFilter,
           status: true,
           filter_show: 'filter_show',
-          title: 'Ocultar búsqueda avanzada',
         });
   };
 
@@ -83,7 +82,7 @@ export const Filter = (props) => {
                   id={key}
                   onChange={handleToggle}
                 />
-                <label for={key}>
+                <label htmlFor={key}>
                   <p>T</p>
                 </label>
               </div>
@@ -101,7 +100,19 @@ export const Filter = (props) => {
         </div>
       </div>
       <div className='filter-button-show'>
-        <button onClick={show}>{classFilter.title}</button>
+        {
+          classFilter.status ? (
+            <button onClick={show}>
+              Ocultar búsqueda avanzada
+              <IoIosArrowDropdownCircle className='icon' />
+            </button>
+          ) : (
+            <button onClick={show}>
+              Mostrar búsqueda avanzada
+              <IoIosArrowDropupCircle className='icon' />
+            </button>
+          ) 
+        }
       </div>
     </div>
   );

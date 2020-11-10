@@ -6,6 +6,7 @@
   justify-content: center;
   background-color: white;
   position: fixed;
+  z-index: 20;
 }
 
 a {
@@ -45,12 +46,12 @@ a {
 }
 .container h1 {
   width: 100%;
-  max-width: 880px;
+  max-width: 865px;
   height: 78px;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  padding: 0 15px;
+  padding: 0 0 0 15px;
   color: #919191;
   background-color: white;
   font-weight: 100;
@@ -104,6 +105,9 @@ a {
   border: none;
   border-radius: 5px;
   outline: none;
+}
+.container .search-container .search div button:hover {
+  background-color: #c95a27;
 }
 .container .search-container .search p {
   width: 100%;
@@ -225,6 +229,9 @@ a {
   color: white;
   background-color: #a4a4a5;
 }
+.container .filter_show .filter-buttons .restore:hover {
+  background-color: #8a8a8a;
+}
 .container .filter_show .filter-buttons .search {
   width: 170px;
   height: 65px;
@@ -243,9 +250,12 @@ a {
 .container .filter_show .filter-buttons .search .icon {
   margin-right: 20px;
 }
+.container .filter_show .filter-buttons .search:hover {
+  background-color: #c95a27;
+}
 .container .filter_hide {
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -253,7 +263,7 @@ a {
   transition: 350ms;
 }
 .container .filter_hide .filter-container {
-  height: 0px;
+  display: none;
 }
 .container .filter-button-show {
   width: 500px;
@@ -261,7 +271,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin-bottom: 10px;
 }
 .container .filter-button-show button {
   font-size: 16px;
@@ -269,6 +279,55 @@ a {
   background-color: transparent;
   border: none;
   outline: none;
+}
+.container .filter-button-show .icon {
+  position: relative;
+  left: 10px;
+  top: 5px;
+  font-size: 25px;
+}
+.container .sort {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.container .sort div {
+  width: 880px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.container .sort div button {
+  width: 345px;
+  height: 50px;
+  color: white;
+  margin: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #30a7d7;
+}
+.container .sort div button p {
+  margin: 0 15px;
+}
+.container .sort div select {
+  width: 365px;
+  height: 35px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin: 20px;
+  padding: 0 10px;
+  background-color: #313131;
 }
 
 .bug {
@@ -352,7 +411,7 @@ a {
   border-radius: 5px;
   border: 2px solid #a4a4a4;
   background-color: #d56723;
-  color: black;
+  color: white;
 }
 
 .fire {
@@ -366,7 +425,7 @@ a {
   border-radius: 5px;
   border: 2px solid #a4a4a4;
   background-color: #fd7d24;
-  color: black;
+  color: white;
 }
 
 .flying {
@@ -453,7 +512,7 @@ a {
   color: black;
 }
 
-.poision {
+.poison {
   width: 110px;
   height: 100%;
   margin-right: 12px;
@@ -521,6 +580,105 @@ a {
   border: 2px solid #a4a4a4;
   background-color: #4592c4;
   color: white;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.list .list-pokedex {
+  width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  font-size: 20px;
+}
+.list .list-button {
+  width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+}
+.list .list-button button {
+  width: 200px;
+  height: 40px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #30a7d7;
+}
+
+.card {
+  width: 205px;
+  height: 300px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.card a {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.card a img {
+  width: 100%;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 5px 5px 0 0;
+  margin-top: -7px;
+}
+.card a div {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -27px;
+}
+.card a div h5 {
+  width: 100%;
+  color: #919191;
+  padding-left: 10px;
+  margin: 5px 0;
+  font-size: 14px;
+}
+.card a div h3 {
+  width: 100%;
+  color: #313131;
+  padding-left: 10px;
+  margin: 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+.card a div div {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -2px;
+}
+.card a div div p {
+  width: 75px;
+  height: 15px;
+  margin: 0 -5px 0 10px;
+  font-size: 11px;
+  border: none;
+  border-radius: 2px;
+}
+.card div button {
+  position: relative;
+  bottom: 285px;
+  left: 175px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  outline: none;
+  font-size: 25px;
 }
 
 * {

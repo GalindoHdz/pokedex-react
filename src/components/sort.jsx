@@ -10,7 +10,7 @@ import {
   sortWeightTop,
   sortRandom,
 } from '../controllers/sorts';
-import { AiOutlineReload } from 'react-icons/ai'
+import { AiOutlineReload } from 'react-icons/ai';
 
 export const Sort = (props) => {
   const [list] = useState(props.list);
@@ -45,13 +45,9 @@ export const Sort = (props) => {
   return (
     <div className='sort'>
       <div>
-        <button
-          onClick={surprise}
-          className=''>
-            <AiOutlineReload />
-            <p>
-              ¡Sorpréndeme!
-            </p>
+        <button onClick={surprise} className=''>
+          <AiOutlineReload />
+          <p>¡Sorpréndeme!</p>
         </button>
         <select name='select' id='select' onChange={handledChange}>
           <option value=''>Ordenar por...</option>
@@ -63,7 +59,7 @@ export const Sort = (props) => {
           <option value='heightTop'>Tamaño superior</option>
           <option value='weigthBottom'>Peso inferior</option>
           <option value='weigthTop'>Peso superior</option>
-      </select>
+        </select>
       </div>
     </div>
   );

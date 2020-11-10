@@ -14,6 +14,7 @@ export const Home = () => {
 
   const updatePokedex = (list) => {
     setState({
+      ...state,
       pokedex: list,
     });
   };

@@ -1,35 +1,35 @@
-.list{
-    width: 100%;
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .list-pokedex {
+    width: 880px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-    .list-pokedex{
-        width: 880px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: white;
-        font-size: 20px;
-    }
+    background-color: white;
+    font-size: 20px;
+  }
 
-    .list-button{
-        width: 880px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: white;
+  .list-button {
+    width: 880px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
 
-        button{
-            width: 200px;
-            height: 40px;
-            margin: 20px 0;
-            border-radius: 5px;
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            background-color: #30a7d7;
-        }
+    button {
+      width: 200px;
+      height: 40px;
+      margin: 20px 0;
+      border-radius: 5px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      background-color: #30a7d7;
     }
+  }
 }

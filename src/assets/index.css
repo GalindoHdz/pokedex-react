@@ -56,279 +56,6 @@ a {
   background-color: white;
   font-weight: 100;
 }
-.container .search-container {
-  width: 100%;
-  height: 184px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #313131;
-}
-.container .search-container .search {
-  width: 450px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-.container .search-container .search label {
-  width: 100%;
-  height: 26px;
-  font-size: 27px;
-  color: white;
-}
-.container .search-container .search div {
-  width: 100%;
-  display: flex;
-}
-.container .search-container .search div input {
-  width: 312px;
-  height: 24px;
-  margin: 5px 0;
-  padding: 8px 0;
-  border-radius: 5px;
-  border: solid 3px #464646;
-  outline: none;
-}
-.container .search-container .search div button {
-  width: 50px;
-  height: 46px;
-  margin: 5px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  background-color: #ee6b2f;
-  font-size: 25px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-.container .search-container .search div button:hover {
-  background-color: #c95a27;
-}
-.container .search-container .search p {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  color: white;
-}
-.container .search-container .search-text {
-  width: 430px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-.container .search-container .search-text p {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px 15px 15px;
-  font-size: 19px;
-  color: white;
-  background-color: #4dad5b;
-  border-radius: 5px;
-  margin-left: 20px;
-}
-.container .filter_show {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #616161;
-  transition: 350ms;
-}
-.container .filter_show .filter-container {
-  width: 100%;
-  max-width: 880px;
-  padding: 0 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.container .filter_show .filter-title {
-  width: 100%;
-  padding-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 27px;
-  color: white;
-}
-.container .filter_show .filter-options {
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-.container .filter_show .filter-option {
-  width: 50%;
-  height: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 5px 0;
-}
-.container .filter_show .filter-option div [type=checkbox] {
-  display: none;
-}
-.container .filter_show .filter-option div label {
-  position: relative;
-  z-index: 0;
-}
-.container .filter_show .filter-option div p {
-  font-size: 16px;
-  font-weight: 600;
-  z-index: 10;
-  position: relative;
-  left: 10px;
-  top: 7px;
-}
-.container .filter_show .filter-option div label:before {
-  width: 28px;
-  height: 28px;
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: solid 1px white;
-  background-color: white;
-}
-.container .filter_show .filter-option div [type=checkbox]:checked + label:before {
-  content: "";
-  border-color: #30a7d4;
-  background-color: #30a7d4;
-}
-.container .filter_show .filter-buttons {
-  width: 500px;
-  height: 65px;
-  margin: 44px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.container .filter_show .filter-buttons .restore {
-  width: 170px;
-  height: 65px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  margin: 0 10px;
-  font-size: 20px;
-  color: white;
-  background-color: #a4a4a5;
-}
-.container .filter_show .filter-buttons .restore:hover {
-  background-color: #8a8a8a;
-}
-.container .filter_show .filter-buttons .search {
-  width: 170px;
-  height: 65px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  margin: 0 10px;
-  font-size: 20px;
-  color: white;
-  background-color: #ee6b2f;
-}
-.container .filter_show .filter-buttons .search .icon {
-  margin-right: 20px;
-}
-.container .filter_show .filter-buttons .search:hover {
-  background-color: #c95a27;
-}
-.container .filter_hide {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #616161;
-  transition: 350ms;
-}
-.container .filter_hide .filter-container {
-  display: none;
-}
-.container .filter-button-show {
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.container .filter-button-show button {
-  font-size: 16px;
-  color: white;
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-.container .filter-button-show .icon {
-  position: relative;
-  left: 10px;
-  top: 5px;
-  font-size: 25px;
-}
-.container .sort {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.container .sort div {
-  width: 880px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-}
-.container .sort div button {
-  width: 345px;
-  height: 50px;
-  color: white;
-  margin: 20px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #30a7d7;
-}
-.container .sort div button p {
-  margin: 0 15px;
-}
-.container .sort div select {
-  width: 365px;
-  height: 35px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  margin: 20px;
-  padding: 0 10px;
-  background-color: #313131;
-}
 
 .bug {
   width: 110px;
@@ -628,7 +355,7 @@ a {
 }
 .card a img {
   width: 100%;
-  height: 200px;
+  height: 205px;
   background-color: #f2f2f2;
   border-radius: 5px 5px 0 0;
   margin-top: -7px;
@@ -672,13 +399,469 @@ a {
 }
 .card div button {
   position: relative;
-  bottom: 285px;
+  bottom: 290px;
   left: 175px;
   display: flex;
   justify-content: center;
   border: none;
   outline: none;
+}
+.card div button .like-true {
+  font-size: 22px;
+  color: #e73f3f;
+  transition: 300ms;
+}
+.card div button .like-false {
+  font-size: 22px;
+  color: #bbbbbb;
+  transition: 300ms;
+}
+
+.filter_show {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #616161;
+  transition: 350ms;
+}
+.filter_show .filter-container {
+  width: 100%;
+  max-width: 880px;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.filter_show .filter-title {
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 27px;
+  color: white;
+}
+.filter_show .filter-options {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.filter_show .filter-option {
+  width: 50%;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 5px 0;
+}
+.filter_show .filter-option div [type=checkbox] {
+  display: none;
+}
+.filter_show .filter-option div label {
+  position: relative;
+  z-index: 0;
+}
+.filter_show .filter-option div p {
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 10;
+  position: relative;
+  left: 10px;
+  top: 7px;
+}
+.filter_show .filter-option div label:before {
+  width: 28px;
+  height: 28px;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: solid 1px white;
+  background-color: white;
+}
+.filter_show .filter-option div [type=checkbox]:checked + label:before {
+  content: "";
+  border-color: #30a7d4;
+  background-color: #30a7d4;
+}
+.filter_show .filter-buttons {
+  width: 500px;
+  height: 65px;
+  margin: 44px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.filter_show .filter-buttons .restore {
+  width: 170px;
+  height: 65px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 0 10px;
+  font-size: 20px;
+  color: white;
+  background-color: #a4a4a5;
+}
+.filter_show .filter-buttons .restore:hover {
+  background-color: #8a8a8a;
+}
+.filter_show .filter-buttons .search {
+  width: 170px;
+  height: 65px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin: 0 10px;
+  font-size: 20px;
+  color: white;
+  background-color: #ee6b2f;
+}
+.filter_show .filter-buttons .search .icon {
+  margin-right: 20px;
+}
+.filter_show .filter-buttons .search:hover {
+  background-color: #c95a27;
+}
+
+.filter_hide {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #616161;
+  transition: 350ms;
+}
+.filter_hide .filter-container {
+  display: none;
+}
+
+.filter-button-show {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.filter-button-show button {
+  font-size: 16px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.filter-button-show .icon {
+  position: relative;
+  left: 10px;
+  top: 5px;
   font-size: 25px;
+}
+
+.search-container {
+  width: 100%;
+  height: 184px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #313131;
+}
+.search-container .search {
+  width: 450px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.search-container .search label {
+  width: 100%;
+  height: 26px;
+  font-size: 27px;
+  color: white;
+}
+.search-container .search div {
+  width: 100%;
+  display: flex;
+}
+.search-container .search div input {
+  width: 312px;
+  height: 24px;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  border: solid 3px #464646;
+  outline: none;
+  font-size: 18px;
+}
+.search-container .search div button {
+  width: 50px;
+  height: 46px;
+  margin: 5px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #ee6b2f;
+  font-size: 25px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.search-container .search div button:hover {
+  background-color: #c95a27;
+}
+.search-container .search p {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: white;
+}
+.search-container .search-text {
+  width: 430px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.search-container .search-text p {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px 15px 15px;
+  font-size: 19px;
+  color: white;
+  background-color: #4dad5b;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.sort {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.sort div {
+  width: 880px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.sort div button {
+  width: 345px;
+  height: 50px;
+  color: white;
+  margin: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #30a7d7;
+}
+.sort div button p {
+  margin: 0 15px;
+}
+.sort div select {
+  width: 365px;
+  height: 35px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin: 20px;
+  padding: 0 10px;
+  background-color: #313131;
+}
+
+.pokemon .pokemon-neighbors {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+  background-color: white;
+}
+.pokemon .pokemon-neighbors a {
+  width: 49.9%;
+  height: 60px;
+  background-color: #a4a4a4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pokemon .pokemon-neighbors a .pokemon-neighbors-icon {
+  font-size: 26px;
+  color: white;
+  margin: 15px;
+}
+.pokemon .pokemon-neighbors a .pokemon-neighbors-name {
+  font-size: 26px;
+  color: #616161;
+  font-weight: 600;
+}
+.pokemon .pokemon-neighbors a .pokemon-neighbors-number {
+  font-size: 24px;
+  color: white;
+  margin: 15px;
+  font-weight: 600;
+}
+.pokemon .pokemon-details {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+.pokemon .pokemon-details .pokemon-details-name {
+  width: 100%;
+  margin: 20px 0 70px 0;
+  display: flex;
+  justify-content: center;
+}
+.pokemon .pokemon-details .pokemon-details-name .details-name {
+  margin: 0 10px;
+  font-size: 35px;
+  color: #212121;
+}
+.pokemon .pokemon-details .pokemon-details-name .details-number {
+  margin: 0 10px;
+  font-size: 35px;
+  color: #616161;
+}
+.pokemon .pokemon-details .pokemon-details-basic {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.pokemon .pokemon-details .pokemon-details-basic img {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  width: 95%;
+  height: 430px;
+}
+.pokemon .pokemon-details .pokemon-details-advance {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.pokemon .pokemon-details .pokemon-details-advance p {
+  width: 95%;
+  color: #212121;
+  font-size: 18px;
+  padding: 10px;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block {
+  width: 95%;
+  display: flex;
+  background-color: #2fa7d6;
+  border-radius: 5px;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div {
+  width: 50%;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div h4 {
+  margin: 20px 20px 0 20px;
+  color: white;
+  font-size: 18px;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div p {
+  margin: 10px 10px;
+  color: black;
+  font-size: 18px;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div {
+  width: 130px;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
+  color: white;
+  position: relative;
+  bottom: 7px;
+  width: 100%;
+  text-align: center;
+}
+
+.stats {
+  width: 95%;
+  margin: 15px 0;
+  border-radius: 5px;
+  background-color: #a4a4a4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stats p {
+  margin: 10px 20px;
+}
+.stats div {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.stats div div {
+  width: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5px;
+  justify-content: center;
+}
+.stats div div ul {
+  width: 100%;
+  list-style-type: none;
+}
+.stats div div ul .fill {
+  width: 100%;
+  height: 10px;
+  margin: 5px 0 0 0;
+  background-color: white;
+}
+.stats div div ul .stat {
+  width: 100%;
+  height: 10px;
+  margin: 5px 0 0 0;
+  background-color: #2fa7d6;
+}
+.stats div div p {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 * {

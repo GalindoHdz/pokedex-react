@@ -3,6 +3,11 @@
 @use 'styles/types.scss';
 @use 'styles/list.scss';
 @use 'styles/card.scss';
+@use 'styles/filter.scss';
+@use 'styles/search.scss';
+@use 'styles/sort.scss';
+@use 'styles/pokemon.scss';
+@use 'styles/stats.scss';
 
 * {
   margin: 0;

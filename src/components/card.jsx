@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLikes } from '../controllers/addLike';
 import { NavLink } from 'react-router-dom';
-import { BiHeart } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
 
 export const Card = (props) => {
@@ -52,11 +51,11 @@ export const Card = (props) => {
       <div>
         {state.like ? (
           <button onClick={addLike}>
-            <FaHeart />
+            <FaHeart className='like-true'/>
           </button>
         ) : (
           <button onClick={addLike}>
-            <BiHeart />
+            <FaHeart className='like-false'/>
           </button>
         )}
       </div>

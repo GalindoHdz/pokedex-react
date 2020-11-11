@@ -1,0 +1,140 @@
+.pokemon{
+    .pokemon-neighbors{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 80px;
+        background-color: white;
+
+        a{
+            width: 49.9%;
+            height: 60px;
+            background-color: #a4a4a4;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .pokemon-neighbors-icon{
+                font-size: 26px;
+                color: white;
+                margin: 15px;
+            }
+
+            .pokemon-neighbors-name{
+                font-size: 26px;
+                color: #616161;
+                font-weight: 600;
+            }
+
+            .pokemon-neighbors-number{
+                font-size: 24px;
+                color: white;
+                margin: 15px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .pokemon-details{
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+
+        .pokemon-details-name{
+            width: 100%;
+            margin: 20px 0 70px 0;
+            display: flex;
+            justify-content: center;
+
+            .details-name{
+                margin: 0 10px;
+                font-size: 35px;
+                color: #212121;
+            }
+
+            .details-number{
+                margin: 0 10px;
+                font-size: 35px;
+                color: #616161;
+            }
+        }
+
+        .pokemon-details-basic{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            img{
+                background-color: #f2f2f2;
+                border-radius: 5px;
+                width: 95%;
+                height: 430px;
+            }
+        }
+
+        .pokemon-details-advance{
+            width: 50%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            p{
+                width: 95%;
+                color: #212121;
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .description-details-advance-block{
+                width: 95%;
+                display: flex;
+                background-color: #2fa7d6;
+                border-radius: 5px;
+
+                div{
+                    width: 50%;
+
+                    h4{
+                        margin: 20px 20px 0 20px;
+                        color: white;
+                        font-size: 18px;
+                    }
+
+                    p{
+                        margin: 10px 10px;
+                        color: black;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .description-details-advance-types{
+                width: 95%;
+                display: flex;
+                flex-wrap: wrap;
+
+                div{
+                    width: 130px;
+                    height: 30px;
+                    color: white;
+                    font-size: 16px;
+                    border: none;
+
+                    p{
+                        color: white;
+                        position: relative;
+                        bottom: 7px;
+                        width: 100%;
+                        text-align: center;
+
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

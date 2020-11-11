@@ -750,6 +750,31 @@ a {
   font-size: 35px;
   color: #616161;
 }
+.pokemon .pokemon-details .pokemon-details-like {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pokemon .pokemon-details .pokemon-details-like button {
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  outline: none;
+  z-index: 10;
+  background-color: white;
+}
+.pokemon .pokemon-details .pokemon-details-like button .like-true {
+  font-size: 25px;
+  color: #e73f3f;
+  transition: 300ms;
+}
+.pokemon .pokemon-details .pokemon-details-like button .like-false {
+  font-size: 25px;
+  color: #bbbbbb;
+  transition: 300ms;
+}
 .pokemon .pokemon-details .pokemon-details-basic {
   width: 50%;
   display: flex;
@@ -811,6 +836,17 @@ a {
   bottom: 7px;
   width: 100%;
   text-align: center;
+}
+.pokemon .pokemon-evolitions {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #616161;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .stats {

@@ -21,7 +21,9 @@ export const Likes = () => {
 
   return (
     <div className='background' style={{ backgroundImage: `url(${bg_black})` }}>
-      <div className='container' style={{ backgroundImage: `url(${bg_white})` }}>
+      <div
+        className='container'
+        style={{ backgroundImage: `url(${bg_white})` }}>
         <h1>Likes</h1>
         <Search list={state.likes} handledSearch={updatePokedex} />
         <Filter list={state.likes} handledFilter={updatePokedex} />

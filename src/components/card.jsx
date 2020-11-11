@@ -29,19 +29,13 @@ export const Card = (props) => {
   return (
     <div className='card'>
       <NavLink exact to={`/Pokemon/${state.name}`}>
-        <img src={image} alt='pokemon'/>
+        <img src={image} alt='pokemon' />
         <div>
-          <h5>
-            N.°{state.number}
-          </h5>
-          <h3>
-            {state.name}
-          </h3>
+          <h5>N.°{state.number}</h5>
+          <h3>{state.name}</h3>
           <div>
             {state.types.map((type) => (
-              <p
-                className={type}
-                key={`${state.id} ${type}`}>
+              <p className={type} key={`${state.id} ${type}`}>
                 {type}
               </p>
             ))}
@@ -51,11 +45,11 @@ export const Card = (props) => {
       <div>
         {state.like ? (
           <button onClick={addLike}>
-            <FaHeart className='like-true'/>
+            <FaHeart className='like-true' />
           </button>
         ) : (
           <button onClick={addLike}>
-            <FaHeart className='like-false'/>
+            <FaHeart className='like-false' />
           </button>
         )}
       </div>

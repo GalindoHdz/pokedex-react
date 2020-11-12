@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '../components/card';
 
 export const List = (props) => {
@@ -6,6 +6,13 @@ export const List = (props) => {
     index: 11,
     list: props.list,
   });
+
+  useEffect(() => {
+    setState({
+      ...state,
+      list: props.list
+    });
+  }, [props]);
 
   const load = async () => {
     const y = window.scrollY;

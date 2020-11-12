@@ -52,7 +52,9 @@ export const Pokemon = (props) => {
       })
     }
 
-    extract(pokemon.chainEvolution);
+    if(pokemon.chainEvolution !== null){
+      extract(pokemon.chainEvolution);
+    }
 
     return chain;
   }

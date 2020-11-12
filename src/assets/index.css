@@ -26,37 +26,99 @@ a {
   background-color: #e3350d;
 }
 
-.background {
-  width: 100%;
-  height: 100%;
-  padding-top: 57px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+@media only screen and (min-width: 769px) {
+  .background {
+    width: 100%;
+    height: 100%;
+    padding-top: 57px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.container {
-  width: 100%;
-  max-width: 1280px;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container h1 {
+    width: 100%;
+    max-width: 865px;
+    height: 78px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 0 0 0 15px;
+    color: #919191;
+    background-color: white;
+    font-weight: 100;
+  }
 }
-.container h1 {
-  width: 100%;
-  max-width: 865px;
-  height: 78px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  padding: 0 0 0 15px;
-  color: #919191;
-  background-color: white;
-  font-weight: 100;
-}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .background {
+    width: 100%;
+    height: 100%;
+    padding-top: 57px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
+  .container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container h1 {
+    width: 100%;
+    max-width: 650px;
+    height: 78px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 0 0 0 15px;
+    color: #919191;
+    background-color: white;
+    font-weight: 100;
+  }
+}
+@media screen and (max-width: 425px) {
+  .background {
+    width: 100%;
+    height: 100%;
+    padding-top: 57px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container h1 {
+    width: 100%;
+    height: 78px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 0 0 0 15px;
+    color: #919191;
+    background-color: white;
+    font-weight: 100;
+  }
+}
 .bug {
   width: 110px;
   height: 100%;
@@ -417,444 +479,1502 @@ a {
   transition: 300ms;
 }
 
-.filter_show {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #616161;
-  transition: 350ms;
-}
-.filter_show .filter-container {
-  width: 100%;
-  max-width: 880px;
-  padding: 0 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.filter_show .filter-title {
-  width: 100%;
-  padding-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 27px;
-  color: white;
-}
-.filter_show .filter-options {
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-.filter_show .filter-option {
-  width: 50%;
-  height: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 5px 0;
-}
-.filter_show .filter-option div [type=checkbox] {
-  display: none;
-}
-.filter_show .filter-option div label {
-  position: relative;
-  z-index: 0;
-}
-.filter_show .filter-option div p {
-  font-size: 16px;
-  font-weight: 600;
-  z-index: 10;
-  position: relative;
-  left: 10px;
-  top: 7px;
-}
-.filter_show .filter-option div label:before {
-  width: 28px;
-  height: 28px;
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: solid 1px white;
-  background-color: white;
-}
-.filter_show .filter-option div [type=checkbox]:checked + label:before {
-  content: "";
-  border-color: #30a7d4;
-  background-color: #30a7d4;
-}
-.filter_show .filter-buttons {
-  width: 500px;
-  height: 65px;
-  margin: 44px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.filter_show .filter-buttons .restore {
-  width: 170px;
-  height: 65px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  margin: 0 10px;
-  font-size: 20px;
-  color: white;
-  background-color: #a4a4a5;
-}
-.filter_show .filter-buttons .restore:hover {
-  background-color: #8a8a8a;
-}
-.filter_show .filter-buttons .search {
-  width: 170px;
-  height: 65px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  margin: 0 10px;
-  font-size: 20px;
-  color: white;
-  background-color: #ee6b2f;
-}
-.filter_show .filter-buttons .search .icon {
-  margin-right: 20px;
-}
-.filter_show .filter-buttons .search:hover {
-  background-color: #c95a27;
-}
+@media only screen and (min-width: 769px) {
+  .filter_show {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #616161;
+    transition: 350ms;
+  }
+  .filter_show .filter-container {
+    width: 100%;
+    max-width: 880px;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter_show .filter-title {
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 27px;
+    color: white;
+  }
+  .filter_show .filter-options {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .filter_show .filter-option {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 5px 0;
+  }
+  .filter_show .filter-option div [type=checkbox] {
+    display: none;
+  }
+  .filter_show .filter-option div label {
+    position: relative;
+    z-index: 0;
+  }
+  .filter_show .filter-option div p {
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 10;
+    position: relative;
+    left: 10px;
+    top: 7px;
+  }
+  .filter_show .filter-option div label:before {
+    width: 28px;
+    height: 28px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: solid 1px white;
+    background-color: white;
+  }
+  .filter_show .filter-option div [type=checkbox]:checked + label:before {
+    content: "";
+    border-color: #30a7d4;
+    background-color: #30a7d4;
+  }
+  .filter_show .filter-buttons {
+    width: 500px;
+    height: 65px;
+    margin: 44px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter_show .filter-buttons .restore {
+    width: 170px;
+    height: 65px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #a4a4a5;
+  }
+  .filter_show .filter-buttons .restore:hover {
+    background-color: #8a8a8a;
+  }
+  .filter_show .filter-buttons .search {
+    width: 170px;
+    height: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #ee6b2f;
+  }
+  .filter_show .filter-buttons .search .icon {
+    margin-right: 20px;
+  }
+  .filter_show .filter-buttons .search:hover {
+    background-color: #c95a27;
+  }
 
-.filter_hide {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #616161;
-  transition: 350ms;
-}
-.filter_hide .filter-container {
-  display: none;
-}
+  .filter_hide {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #616161;
+    transition: 350ms;
+  }
+  .filter_hide .filter-container {
+    display: none;
+  }
 
-.filter-button-show {
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
+  .filter-button-show {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .filter-button-show button {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  .filter-button-show .icon {
+    position: relative;
+    left: 10px;
+    top: 5px;
+    font-size: 25px;
+  }
 }
-.filter-button-show button {
-  font-size: 16px;
-  color: white;
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-.filter-button-show .icon {
-  position: relative;
-  left: 10px;
-  top: 5px;
-  font-size: 25px;
-}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .filter_show {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #616161;
+  }
+  .filter_show .filter-container {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter_show .filter-title {
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 27px;
+    color: white;
+  }
+  .filter_show .filter-options {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .filter_show .filter-option {
+    width: 40%;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 5px 0;
+  }
+  .filter_show .filter-option div [type=checkbox] {
+    display: none;
+  }
+  .filter_show .filter-option div label {
+    position: relative;
+    z-index: 0;
+  }
+  .filter_show .filter-option div p {
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 10;
+    position: relative;
+    left: 10px;
+    top: 7px;
+  }
+  .filter_show .filter-option div label:before {
+    width: 28px;
+    height: 28px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: solid 1px white;
+    background-color: white;
+  }
+  .filter_show .filter-option div [type=checkbox]:checked + label:before {
+    content: "";
+    border-color: #30a7d4;
+    background-color: #30a7d4;
+  }
+  .filter_show .filter-buttons {
+    width: 100%;
+    height: 65px;
+    margin: 44px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter_show .filter-buttons .restore {
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #a4a4a5;
+  }
+  .filter_show .filter-buttons .restore:hover {
+    background-color: #8a8a8a;
+  }
+  .filter_show .filter-buttons .search {
+    width: 170px;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #ee6b2f;
+  }
+  .filter_show .filter-buttons .search .icon {
+    margin-right: 20px;
+  }
+  .filter_show .filter-buttons .search:hover {
+    background-color: #c95a27;
+  }
 
-.search-container {
-  width: 100%;
-  height: 184px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #313131;
-}
-.search-container .search {
-  width: 450px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-.search-container .search label {
-  width: 100%;
-  height: 26px;
-  font-size: 27px;
-  color: white;
-}
-.search-container .search div {
-  width: 100%;
-  display: flex;
-}
-.search-container .search div input {
-  width: 312px;
-  height: 24px;
-  margin: 5px 0;
-  padding: 8px;
-  border-radius: 5px;
-  border: solid 3px #464646;
-  outline: none;
-  font-size: 18px;
-}
-.search-container .search div button {
-  width: 50px;
-  height: 46px;
-  margin: 5px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  background-color: #ee6b2f;
-  font-size: 25px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-.search-container .search div button:hover {
-  background-color: #c95a27;
-}
-.search-container .search p {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  color: white;
-}
-.search-container .search-text {
-  width: 430px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-.search-container .search-text p {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px 15px 15px;
-  font-size: 19px;
-  color: white;
-  background-color: #4dad5b;
-  border-radius: 5px;
-  margin-left: 20px;
-}
+  .filter_hide {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #616161;
+  }
+  .filter_hide .filter-container {
+    display: none;
+  }
 
-.sort {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  .filter-button-show {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .filter-button-show button {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  .filter-button-show .icon {
+    position: relative;
+    left: 10px;
+    top: 5px;
+    font-size: 25px;
+  }
 }
-.sort div {
-  width: 880px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-}
-.sort div button {
-  width: 345px;
-  height: 50px;
-  color: white;
-  margin: 20px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #30a7d7;
-}
-.sort div button p {
-  margin: 0 15px;
-}
-.sort div select {
-  width: 365px;
-  height: 35px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  margin: 20px;
-  padding: 0 10px;
-  background-color: #313131;
-}
+@media screen and (max-width: 425px) {
+  .filter_show {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #616161;
+  }
+  .filter_show .filter-container {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter_show .filter-title {
+    width: 100%;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 27px;
+    color: white;
+  }
+  .filter_show .filter-options {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .filter_show .filter-option {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 5px 0;
+  }
+  .filter_show .filter-option div [type=checkbox] {
+    display: none;
+  }
+  .filter_show .filter-option div label {
+    position: relative;
+    z-index: 0;
+  }
+  .filter_show .filter-option div p {
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 10;
+    position: relative;
+    left: 0px;
+    top: 7px;
+  }
+  .filter_show .filter-option div label:before {
+    width: 28px;
+    height: 28px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: solid 1px white;
+    background-color: white;
+    margin-left: -10px;
+  }
+  .filter_show .filter-option div [type=checkbox]:checked + label:before {
+    content: "";
+    border-color: #30a7d4;
+    background-color: #30a7d4;
+  }
+  .filter_show .filter-buttons {
+    width: 100%;
+    margin: 44px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter_show .filter-buttons .restore {
+    width: 85%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #a4a4a5;
+  }
+  .filter_show .filter-buttons .restore:hover {
+    background-color: #8a8a8a;
+  }
+  .filter_show .filter-buttons .search {
+    width: 85%;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #ee6b2f;
+  }
+  .filter_show .filter-buttons .search .icon {
+    margin-right: 20px;
+  }
+  .filter_show .filter-buttons .search:hover {
+    background-color: #c95a27;
+  }
 
-.pokemon .pokemon-neighbors {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 80px;
-  background-color: white;
-}
-.pokemon .pokemon-neighbors a {
-  width: 49.9%;
-  height: 60px;
-  background-color: #a4a4a4;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.pokemon .pokemon-neighbors a .pokemon-neighbors-icon {
-  font-size: 26px;
-  color: white;
-  margin: 15px;
-}
-.pokemon .pokemon-neighbors a .pokemon-neighbors-name {
-  font-size: 26px;
-  color: #616161;
-  font-weight: 600;
-}
-.pokemon .pokemon-neighbors a .pokemon-neighbors-number {
-  font-size: 24px;
-  color: white;
-  margin: 15px;
-  font-weight: 600;
-}
-.pokemon .pokemon-details {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: white;
-}
-.pokemon .pokemon-details .pokemon-details-name {
-  width: 100%;
-  margin: 20px 0 70px 0;
-  display: flex;
-  justify-content: center;
-}
-.pokemon .pokemon-details .pokemon-details-name .details-name {
-  margin: 0 10px;
-  font-size: 35px;
-  color: #212121;
-}
-.pokemon .pokemon-details .pokemon-details-name .details-number {
-  margin: 0 10px;
-  font-size: 35px;
-  color: #616161;
-}
-.pokemon .pokemon-details .pokemon-details-like {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.pokemon .pokemon-details .pokemon-details-like button {
-  position: relative;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  border: none;
-  outline: none;
-  z-index: 10;
-  background-color: white;
-}
-.pokemon .pokemon-details .pokemon-details-like button .like-true {
-  font-size: 25px;
-  color: #e73f3f;
-  transition: 300ms;
-}
-.pokemon .pokemon-details .pokemon-details-like button .like-false {
-  font-size: 25px;
-  color: #bbbbbb;
-  transition: 300ms;
-}
-.pokemon .pokemon-details .pokemon-details-basic {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.pokemon .pokemon-details .pokemon-details-basic img {
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  width: 95%;
-  height: 430px;
-}
-.pokemon .pokemon-details .pokemon-details-advance {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.pokemon .pokemon-details .pokemon-details-advance p {
-  width: 95%;
-  color: #212121;
-  font-size: 18px;
-  padding: 10px;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block {
-  width: 95%;
-  display: flex;
-  background-color: #2fa7d6;
-  border-radius: 5px;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div {
-  width: 50%;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div h4 {
-  margin: 20px 20px 0 20px;
-  color: white;
-  font-size: 18px;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div p {
-  margin: 10px 10px;
-  color: black;
-  font-size: 18px;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types {
-  width: 95%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div {
-  width: 130px;
-  height: 30px;
-  color: white;
-  font-size: 16px;
-  border: none;
-}
-.pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
-  color: white;
-  position: relative;
-  bottom: 7px;
-  width: 100%;
-  text-align: center;
-}
-.pokemon .pokemon-evolitions {
-  width: 100%;
-  max-width: 880px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #616161;
-  border-radius: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.pokemon .pokemon-evolitions .arrow {
-  color: white;
-  font-size: 30px;
-  position: relative;
-  bottom: 45px;
-}
+  .filter_hide {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #616161;
+  }
+  .filter_hide .filter-container {
+    display: none;
+  }
 
+  .filter-button-show {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .filter-button-show button {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  .filter-button-show .icon {
+    position: relative;
+    left: 10px;
+    top: 5px;
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .search-container {
+    width: 100%;
+    height: 184px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #313131;
+  }
+  .search-container .search {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .search-container .search label {
+    width: 100%;
+    height: 26px;
+    font-size: 27px;
+    color: white;
+  }
+  .search-container .search div {
+    width: 100%;
+    display: flex;
+  }
+  .search-container .search div input {
+    width: 312px;
+    height: 24px;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: solid 3px #464646;
+    outline: none;
+    font-size: 18px;
+  }
+  .search-container .search div button {
+    width: 50px;
+    height: 46px;
+    margin: 5px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: #ee6b2f;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  .search-container .search div button:hover {
+    background-color: #c95a27;
+  }
+  .search-container .search p {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+  }
+  .search-container .search-text {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .search-container .search-text p {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px 15px 15px;
+    font-size: 19px;
+    color: white;
+    background-color: #4dad5b;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #313131;
+  }
+  .search-container .search {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+  }
+  .search-container .search label {
+    width: 100%;
+    height: 26px;
+    font-size: 27px;
+    color: white;
+  }
+  .search-container .search div {
+    width: 100%;
+    display: flex;
+  }
+  .search-container .search div input {
+    width: 312px;
+    height: 24px;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: solid 3px #464646;
+    outline: none;
+    font-size: 18px;
+  }
+  .search-container .search div button {
+    width: 50px;
+    height: 46px;
+    margin: 5px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: #ee6b2f;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  .search-container .search div button:hover {
+    background-color: #c95a27;
+  }
+  .search-container .search p {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+  }
+  .search-container .search-text {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 20px 0;
+  }
+  .search-container .search-text p {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px 15px 15px;
+    font-size: 19px;
+    color: white;
+    background-color: #4dad5b;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #313131;
+  }
+  .search-container .search {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 20px 0;
+  }
+  .search-container .search label {
+    width: 100%;
+    height: 26px;
+    font-size: 27px;
+    color: white;
+  }
+  .search-container .search div {
+    width: 100%;
+    display: flex;
+  }
+  .search-container .search div input {
+    width: 312px;
+    height: 24px;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: solid 3px #464646;
+    outline: none;
+    font-size: 18px;
+  }
+  .search-container .search div button {
+    width: 50px;
+    height: 46px;
+    margin: 5px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: #ee6b2f;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  .search-container .search div button:hover {
+    background-color: #c95a27;
+  }
+  .search-container .search p {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+  }
+  .search-container .search-text {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 30px 0;
+  }
+  .search-container .search-text p {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px 15px 15px;
+    font-size: 18px;
+    color: white;
+    background-color: #4dad5b;
+    border-radius: 5px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .sort {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .sort div {
+    width: 100%;
+    max-width: 865px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+  }
+  .sort div button {
+    width: 345px;
+    height: 50px;
+    color: white;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #30a7d7;
+  }
+  .sort div button p {
+    margin: 0 15px;
+  }
+  .sort div select {
+    width: 365px;
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin: 20px;
+    padding: 0 10px;
+    background-color: #313131;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .sort {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .sort div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  .sort div button {
+    width: 85%;
+    height: 50px;
+    color: white;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #30a7d7;
+  }
+  .sort div button p {
+    margin: 0 15px;
+  }
+  .sort div select {
+    width: 85%;
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 10px;
+    background-color: #313131;
+  }
+}
+@media screen and (max-width: 425px) {
+  .sort {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .sort div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  .sort div button {
+    width: 85%;
+    height: 50px;
+    color: white;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #30a7d7;
+  }
+  .sort div button p {
+    margin: 0 15px;
+  }
+  .sort div select {
+    width: 85%;
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 10px;
+    background-color: #313131;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .pokemon .pokemon-neighbors {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    background-color: white;
+  }
+  .pokemon .pokemon-neighbors a {
+    width: 49.9%;
+    height: 60px;
+    background-color: #a4a4a4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-icon {
+    font-size: 26px;
+    color: white;
+    margin: 15px;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-name {
+    font-size: 26px;
+    color: #616161;
+    font-weight: 600;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-number {
+    font-size: 24px;
+    color: white;
+    margin: 15px;
+    font-weight: 600;
+  }
+  .pokemon .pokemon-details {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+  }
+  .pokemon .pokemon-details .pokemon-details-name {
+    width: 100%;
+    margin: 20px 0 70px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-name {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #212121;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-number {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #616161;
+  }
+  .pokemon .pokemon-details .pokemon-details-like {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button {
+    position: relative;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    z-index: 10;
+    background-color: transparent;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-true {
+    font-size: 25px;
+    color: #e73f3f;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-false {
+    font-size: 25px;
+    color: #bbbbbb;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic img {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 95%;
+    height: 430px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance p {
+    width: 90%;
+    color: #212121;
+    font-size: 18px;
+    padding: 8px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block {
+    width: 95%;
+    display: flex;
+    background-color: #2fa7d6;
+    border-radius: 5px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div {
+    width: 50%;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div h4 {
+    margin: 20px 20px 0 20px;
+    color: white;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div p {
+    margin: 10px 10px;
+    color: black;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div {
+    width: 130px;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    border: none;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
+    color: white;
+    position: relative;
+    bottom: 7px;
+    width: 100%;
+    text-align: center;
+  }
+  .pokemon .pokemon-evolitions {
+    width: 100%;
+    max-width: 880px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #616161;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-evolitions .arrow {
+    color: white;
+    font-size: 30px;
+    position: relative;
+    bottom: 45px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .pokemon .pokemon-neighbors {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    background-color: white;
+  }
+  .pokemon .pokemon-neighbors a {
+    width: 49.9%;
+    height: 60px;
+    background-color: #a4a4a4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-icon {
+    font-size: 26px;
+    color: white;
+    margin: 15px;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-name {
+    display: none;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-number {
+    font-size: 24px;
+    color: white;
+    margin: 15px;
+    font-weight: 600;
+  }
+  .pokemon .pokemon-details {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name {
+    width: 100%;
+    margin: 20px 0 70px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-name {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #212121;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-number {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #616161;
+  }
+  .pokemon .pokemon-details .pokemon-details-like {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button {
+    position: relative;
+    top: 35px;
+    left: 250px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    z-index: 10;
+    background-color: transparent;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-true {
+    font-size: 25px;
+    color: #e73f3f;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-false {
+    font-size: 25px;
+    color: #bbbbbb;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic img {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 95%;
+    height: auto;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance p {
+    width: 95%;
+    color: #212121;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block {
+    width: 95%;
+    display: flex;
+    background-color: #2fa7d6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div {
+    width: 50%;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div h4 {
+    margin: 20px 20px 0 20px;
+    color: white;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div p {
+    margin: 10px 10px;
+    color: black;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div {
+    width: 130px;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    border: none;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
+    color: white;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .pokemon .pokemon-evolitions {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #616161;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-evolitions .arrow {
+    color: white;
+    font-size: 30px;
+    transform: rotate(90deg);
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 600px) {
+  .pokemon .pokemon-neighbors {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    background-color: white;
+  }
+  .pokemon .pokemon-neighbors a {
+    width: 49.9%;
+    height: 60px;
+    background-color: #a4a4a4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-icon {
+    font-size: 26px;
+    color: white;
+    margin: 15px;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-name {
+    display: none;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-number {
+    font-size: 24px;
+    color: white;
+    margin: 15px;
+    font-weight: 600;
+  }
+  .pokemon .pokemon-details {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name {
+    width: 100%;
+    margin: 20px 0 70px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-name {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #212121;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-number {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #616161;
+  }
+  .pokemon .pokemon-details .pokemon-details-like {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button {
+    position: relative;
+    top: 35px;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    z-index: 10;
+    background-color: transparent;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-true {
+    font-size: 25px;
+    color: #e73f3f;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-false {
+    font-size: 25px;
+    color: #bbbbbb;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic img {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 95%;
+    height: auto;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance p {
+    width: 95%;
+    color: #212121;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block {
+    width: 95%;
+    display: flex;
+    background-color: #2fa7d6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div {
+    width: 50%;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div h4 {
+    margin: 20px 20px 0 20px;
+    color: white;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div p {
+    margin: 10px 10px;
+    color: black;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div {
+    width: 130px;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    border: none;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
+    color: white;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .pokemon .pokemon-evolitions {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #616161;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-evolitions .arrow {
+    color: white;
+    font-size: 30px;
+    transform: rotate(90deg);
+  }
+}
+@media screen and (max-width: 425px) {
+  .pokemon .pokemon-neighbors {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    background-color: white;
+  }
+  .pokemon .pokemon-neighbors a {
+    width: 49.9%;
+    height: 60px;
+    background-color: #a4a4a4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-icon {
+    font-size: 26px;
+    color: white;
+    margin: 15px;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-name {
+    display: none;
+  }
+  .pokemon .pokemon-neighbors a .pokemon-neighbors-number {
+    font-size: 24px;
+    color: white;
+    margin: 15px;
+    font-weight: 600;
+  }
+  .pokemon .pokemon-details {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name {
+    width: 100%;
+    margin: 20px 0 70px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-name {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #212121;
+  }
+  .pokemon .pokemon-details .pokemon-details-name .details-number {
+    margin: 0 10px;
+    font-size: 35px;
+    color: #616161;
+  }
+  .pokemon .pokemon-details .pokemon-details-like {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button {
+    position: relative;
+    top: 35px;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+    z-index: 10;
+    background-color: transparent;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-true {
+    font-size: 25px;
+    color: #e73f3f;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-like button .like-false {
+    font-size: 25px;
+    color: #bbbbbb;
+    transition: 300ms;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pokemon .pokemon-details .pokemon-details-basic img {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 95%;
+    height: auto;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance p {
+    width: 95%;
+    color: #212121;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block {
+    width: 95%;
+    display: flex;
+    background-color: #2fa7d6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div {
+    width: 50%;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div h4 {
+    margin: 20px 20px 0 20px;
+    color: white;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-block div p {
+    margin: 10px 10px;
+    color: black;
+    font-size: 18px;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div {
+    width: 130px;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    border: none;
+  }
+  .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
+    color: white;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .pokemon .pokemon-evolitions {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #616161;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemon .pokemon-evolitions .arrow {
+    color: white;
+    font-size: 30px;
+    transform: rotate(90deg);
+  }
+}
 .stats {
   width: 95%;
   margin: 15px 0;
@@ -868,14 +1988,14 @@ a {
   margin: 10px 20px;
 }
 .stats div {
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 .stats div div {
-  width: 55px;
+  width: 13%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 5px;

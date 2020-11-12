@@ -174,5 +174,12 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    .arrow{
+      color: white;
+      font-size: 30px;
+      position: relative;
+      bottom: 45px;
+    }
   }
 }

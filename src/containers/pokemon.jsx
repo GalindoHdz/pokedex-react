@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLikes } from '../controllers/addLike';
@@ -6,11 +6,13 @@ import { prev, next } from '../controllers/neighbors';
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
+  IoIosArrowForward,
 } from 'react-icons/io';
 import bg_black from '../assets/images/bg-black.png';
 import bg_white from '../assets/images/bg-white.png';
 import { Stats } from '../components/stats';
 import { FaHeart } from 'react-icons/fa';
+import { Circule } from '../components/circule'
 
 export const Pokemon = (props) => {
   const pokedex = useSelector((state) => state.Pokedex);
@@ -25,18 +27,37 @@ export const Pokemon = (props) => {
     like: pokemon.like,
   });
 
-  useEffect(() => {
-    setState({
-      like: !pokemon.like,
-    });
-  }, [pokemon]);
-
   const addLike = () => {
     addLikes(pokemon.id, likes, pokedex, dispatch);
     setState({
       like: !state.like,
     });
   };
+
+  const extractChain = () => {
+    let chain = [];
+
+    const extract = (obj) => {
+      Object.entries(obj).forEach((element) => {
+        if(element[0] === 'name'){
+          chain.push(pokedex.find((pokemon) => pokemon.name === element[1]));
+        }else if(element[0] === 'evolution'){
+          if(element[1].length !== 0){
+            chain.push('arrow');
+            extract(element[1]);
+          }
+        }else{
+          extract(element[1]);
+        }
+      })
+    }
+
+    extract(pokemon.chainEvolution);
+
+    return chain;
+  }
+
+  const chain = extractChain();
 
   return (
     <div className='background' style={{ backgroundImage: `url(${bg_black})` }}>
@@ -61,13 +82,13 @@ export const Pokemon = (props) => {
             <p className='details-number'>N.°{pokemon.number}</p>
           </div>
           <div className='pokemon-details-like'>
-            {state.like ? (
+            {pokemon.like ? (
               <button onClick={addLike}>
-                <FaHeart className='like-false' />
+                <FaHeart className='like-true' />
               </button>
             ) : (
               <button onClick={addLike}>
-                <FaHeart className='like-true' />
+                <FaHeart className='like-false' />
               </button>
             )}
           </div>
@@ -100,7 +121,15 @@ export const Pokemon = (props) => {
         <div
           className='pokemon-evolitions'
           style={{ backgroundImage: `url(${bg_white})` }}>
-          evolution
+          {
+            chain.map((element, index) => (
+              typeof element === 'string' ? (
+                <IoIosArrowForward key={index} className='arrow'/>
+              ) : (
+                <Circule key={index} pokemon={element}/>
+              )
+            ))
+          }
         </div>
       </div>
     </div>

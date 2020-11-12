@@ -104,12 +104,12 @@ export const Filter = (props) => {
           classFilter.status ? (
             <button onClick={show}>
               Ocultar búsqueda avanzada
-              <IoIosArrowDropdownCircle className='icon' />
+              <IoIosArrowDropupCircle className='icon' />
             </button>
           ) : (
             <button onClick={show}>
               Mostrar búsqueda avanzada
-              <IoIosArrowDropupCircle className='icon' />
+              <IoIosArrowDropdownCircle className='icon' />
             </button>
           ) 
         }

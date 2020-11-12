@@ -14,7 +14,7 @@ export const List = (props) => {
       window.scrollTo(0, y);
     };
 
-    state.index < 887
+    state.index <= 887
       ? setState({
           ...state,
           index: state.index + 12,
@@ -42,7 +42,7 @@ export const List = (props) => {
             )}
           </div>
           <div className='list-button'>
-            {state.index <= state.list.length ? (
+            {state.index < state.list.length ? (
               <button onClick={load}>Cargar mas Pokemons</button>
             ) : null}
           </div>

@@ -4,25 +4,26 @@ export const addPokedex = async (pokedex, dispatch) => {
   while (pokedex.length < 893) {
     for (let index = pokedex.length + 1; index <= 893; index++) {
       const data = await PokeApi.getPokemon(index);
-      const species = await PokeApi.getSpecies(index);
-      const chain = species.url
-        ? await PokeApi.getEvolutionChain(species.url)
-        : null;
+      // const species = await PokeApi.getSpecies(index);
+      // const chain = species.url
+      //   ? await PokeApi.getEvolutionChain(species.url)
+      //   : null;
       const pokemon = {
-        number: numberString(index),
-        image: `${numberString(index)}.png`,
+        // number: numberString(index),
+        // image: `${numberString(index)}.png`,
         id: data.id,
         name: data.name,
-        types: data.types.map((type) => type.type.name),
+        // types: data.types.map((type) => type.type.name),
+        types: data.types,
         like: false,
         height: data.height,
         weight: data.weight,
-        stats: data.stats.map((stat) => ({
-          name: stat.stat.name,
-          value: stat.base_stat,
-        })),
-        chainEvolution: chain ? extract(chain) : null,
-        description: species.description,
+        // stats: data.stats.map((stat) => ({
+        //   name: stat.stat.name,
+        //   value: stat.base_stat,
+        // })),
+        // chainEvolution: chain ? extract(chain) : null,
+        // description: species.description,
       };
 
       pokedex.push(pokemon);
@@ -44,23 +45,23 @@ export const addPokedex = async (pokedex, dispatch) => {
   }
 };
 
-const numberString = (number) => {
-  const str = '' + number;
-  const pad = '000';
-  return pad.substring(0, pad.length - str.length) + str;
-};
+// const numberString = (number) => {
+//   const str = '' + number;
+//   const pad = '000';
+//   return pad.substring(0, pad.length - str.length) + str;
+// };
 
-const extract = (chain) => {
-  let evoChain = {
-    name: chain.species.name,
-    evolution: [],
-  };
+// const extract = (chain) => {
+//   let evoChain = {
+//     name: chain.species.name,
+//     evolution: [],
+//   };
 
-  if (chain.evolves_to) {
-    Object.entries(chain.evolves_to).map((element) =>
-      evoChain.evolution.push(extract(element[1]))
-    );
-  }
+//   if (chain.evolves_to) {
+//     Object.entries(chain.evolves_to).map((element) =>
+//       evoChain.evolution.push(extract(element[1]))
+//     );
+//   }
 
-  return evoChain;
-};
+//   return evoChain;
+// };

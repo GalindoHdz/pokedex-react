@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: #616161;
-    transition: 350ms;
+    transition: opacity 1s ease-out;
   
     .filter-container {
       width: 100%;
@@ -138,7 +138,7 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: #616161;
-    transition: 350ms;
+    transition: opacity 1s ease-out;
   
     .filter-container {
       display: none;

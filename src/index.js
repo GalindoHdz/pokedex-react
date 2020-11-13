@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import './assets/index.css';
 
+// Implementamos el enrutador y Redux en la app
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={Store}>

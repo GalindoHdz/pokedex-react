@@ -6,10 +6,12 @@ import { Home } from './containers/home';
 import { Likes } from './containers/likes';
 import { Pokemon } from './containers/pokemon';
 
+// Enrutador de la app
 export const Routes = () => {
   const pokedex = useSelector((state) => state.Pokedex);
   const dispatch = useDispatch();
 
+  // Cargamos la pokedex, si no esta completa
   useEffect(() => {
     const getPokedex = async () => {
       if (pokedex.length < 893) {

@@ -486,7 +486,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     background-color: #616161;
-    transition: 350ms;
+    transition: opacity 1s ease-out;
   }
   .filter_show .filter-container {
     width: 100%;
@@ -602,7 +602,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     background-color: #616161;
-    transition: 350ms;
+    transition: opacity 1s ease-out;
   }
   .filter_hide .filter-container {
     display: none;

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { Pokedex, Likes, Loading } from './utils';
+import { Pokedex, Likes } from './utils';
 
+// Combinacion de los reducers
 const rootReducer = combineReducers({
   Pokedex,
   Likes,
-  Loading,
 });
 
 export default rootReducer;

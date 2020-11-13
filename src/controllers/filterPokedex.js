@@ -1,13 +1,12 @@
+// Funcion para filtrar pokemons por los tipos
 export const filterPokedex = (pokedex, filters) => {
-  let filtered = pokedex;
-
   Object.values(filters).forEach((filter) => {
-    filtered = filtered.filter((pokemon) => {
+    pokedex = pokedex.filter((pokemon) => {
       return pokemon.types.some((type) => {
         return filter.includes(type);
       });
     });
   });
 
-  return filtered;
+  return pokedex;
 };

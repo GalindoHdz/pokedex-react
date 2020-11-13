@@ -16,6 +16,12 @@ export const Routes = () => {
     const getPokedex = async () => {
       if (pokedex.length < 893) {
         await addPokedex(pokedex, dispatch);
+
+        //Cargamos la pokedex temporal para mostrarla inicialmente
+        dispatch({
+          type: 'ADD_TEMP_POKEDEX',
+          payload: pokedex,
+        });
       }
     };
 

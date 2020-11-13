@@ -1,26 +1,42 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { findPokemon } from '../controllers/findPokemon';
 import { BiSearch } from 'react-icons/bi';
 
 export const Search = (props) => {
-  const [state, setState] = useState({
-    word: '',
-    list: props.list,
-  });
+  // Lista de pokedex, likes y el dispatch de Redux
+  const pokedex = useSelector((state) => state.Pokedex);
+  const likes = useSelector((state) => state.Likes);
+  const dispatch = useDispatch();
 
+  // State de la palabra del input
+  const [word, setWord] = useState('');
+
+  // Funcion para buscar en las listas
   const find = () => {
-    state.word
-      ? props.handledSearch(findPokemon(state.word, state.list))
-      : props.handledSearch(state.list);
+    // Si el master es home, guardamos en Redux la pokedex temporal
+    if (props.master === 'Home') {
+      dispatch({
+        type: 'ADD_TEMP_POKEDEX',
+        payload: findPokemon(word, pokedex),
+      });
+    }
+
+    // Si el master es likes, guardamos en Redux los likes temporales
+    if (props.master === 'Likes') {
+      dispatch({
+        type: 'ADD_TEMP_LIKES',
+        payload: findPokemon(word, likes),
+      });
+    }
   };
 
+  // Funcion para guardar la palabra escrita en el input
   const handledChange = ({ target }) => {
-    setState({
-      ...state,
-      word: target.value,
-    });
+    setWord(target.value);
   };
 
+  // Funcion para detectar enter en el input y ejecutar la busqueda
   const handledKeyPress = (event) => {
     if (event.key === 'Enter') {
       find();

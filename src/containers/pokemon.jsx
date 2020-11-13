@@ -12,7 +12,7 @@ import bg_black from '../assets/images/bg-black.png';
 import bg_white from '../assets/images/bg-white.png';
 import { Stats } from '../components/stats';
 import { FaHeart } from 'react-icons/fa';
-import { Circule } from '../components/circule'
+import { Circule } from '../components/circule';
 
 export const Pokemon = (props) => {
   const pokedex = useSelector((state) => state.Pokedex);
@@ -39,25 +39,25 @@ export const Pokemon = (props) => {
 
     const extract = (obj) => {
       Object.entries(obj).forEach((element) => {
-        if(element[0] === 'name'){
+        if (element[0] === 'name') {
           chain.push(pokedex.find((pokemon) => pokemon.name === element[1]));
-        }else if(element[0] === 'evolution'){
-          if(element[1].length !== 0){
+        } else if (element[0] === 'evolution') {
+          if (element[1].length !== 0) {
             chain.push('arrow');
             extract(element[1]);
           }
-        }else{
+        } else {
           extract(element[1]);
         }
-      })
-    }
+      });
+    };
 
-    if(pokemon.chainEvolution !== null){
+    if (pokemon.chainEvolution !== null) {
       extract(pokemon.chainEvolution);
     }
 
     return chain;
-  }
+  };
 
   const chain = extractChain();
 
@@ -123,15 +123,13 @@ export const Pokemon = (props) => {
         <div
           className='pokemon-evolitions'
           style={{ backgroundImage: `url(${bg_white})` }}>
-          {
-            chain.map((element, index) => (
-              typeof element === 'string' ? (
-                <IoIosArrowForward key={index} className='arrow'/>
-              ) : (
-                <Circule key={index} pokemon={element}/>
-              )
-            ))
-          }
+          {chain.map((element, index) =>
+            typeof element === 'string' ? (
+              <IoIosArrowForward key={index} className='arrow' />
+            ) : (
+              <Circule key={index} pokemon={element} />
+            )
+          )}
         </div>
       </div>
     </div>

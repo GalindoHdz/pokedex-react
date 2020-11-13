@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { filterPokedex } from '../controllers/filterPokedex';
 import { BiSearch } from 'react-icons/bi';
-import { IoIosArrowDropupCircle, IoIosArrowDropdownCircle } from 'react-icons/io';
+import {
+  IoIosArrowDropupCircle,
+  IoIosArrowDropdownCircle,
+} from 'react-icons/io';
 
 export const Filter = (props) => {
-  const [list] = useState(props.list);
+  // Lista de pokedex, likes y el dispatch de Redux
+  const pokedex = useSelector((state) => state.Pokedex);
+  const likes = useSelector((state) => state.Likes);
+  const dispatch = useDispatch();
+
+  // State de tipos de pokemon disponibles para filtrar lista
   const [inputs, setInputs] = useState({
     bug: false,
     dark: false,
@@ -25,33 +34,14 @@ export const Filter = (props) => {
     steel: false,
     water: false,
   });
-  
+
+  // State del estilo css del componente
   const [classFilter, setClassFilter] = useState({
     status: false,
     filter_show: 'filter_hide',
   });
 
-  const handleToggle = ({ target }) => {
-    setInputs({
-      ...inputs,
-      [target.name]: !inputs[target.name],
-    });
-  };
-
-  const search = () => {
-    const filters = [];
-
-    Object.entries(inputs).map((element) =>
-      element[1] === true ? filters.push(element[0]) : null
-    );
-
-    props.handledFilter(filterPokedex(list, filters));
-  };
-
-  const restore = () => {
-    props.handledFilter(list);
-  };
-
+  // Funcion para cambiar el estilo del componente
   const show = () => {
     classFilter.status
       ? setClassFilter({
@@ -66,11 +56,68 @@ export const Filter = (props) => {
         });
   };
 
+  // Funcion para cambiar el estado de un tipo
+  const handleToggle = ({ target }) => {
+    setInputs({
+      ...inputs,
+      [target.name]: !inputs[target.name],
+    });
+  };
+
+  // Funcion para filtrar las listas
+  const search = () => {
+    // Array para los tipos activados
+    const filters = [];
+
+    // Recorremos todos los tipos buscando los que estan activados
+    // Guardamos en el Array los tipos activados
+    Object.entries(inputs).map((element) =>
+      element[1] === true ? filters.push(element[0]) : null
+    );
+
+    // Si el master es home, guardamos en Redux la pokedex temporal
+    if (props.master === 'Home') {
+      dispatch({
+        type: 'ADD_TEMP_POKEDEX',
+        payload: filterPokedex(pokedex, filters),
+      });
+    }
+
+    // Si el master es likes, guardamos en Redux los likes temporales
+    if (props.master === 'Likes') {
+      dispatch({
+        type: 'ADD_TEMP_LIKES',
+        payload: filterPokedex(likes, filters),
+      });
+    }
+  };
+
+  // Funcion para restaurar los inputs y las litas temporales en Redux
+  const restore = () => {
+    document.getElementById('filter').reset();
+
+    // Si el master es home, reestablecemos la pokedex temporal
+    if (props.master === 'Home') {
+      dispatch({
+        type: 'ADD_TEMP_POKEDEX',
+        payload: pokedex,
+      });
+    }
+
+    // Si el master es likes, reestablecemos los likes temporales
+    if (props.master === 'Likes') {
+      dispatch({
+        type: 'ADD_TEMP_LIKES',
+        payload: likes,
+      });
+    }
+  };
+
   return (
     <div className={classFilter.filter_show}>
       <div className='filter-container'>
         <p className='filter-title'>Tipo</p>
-        <div className='filter-options'>
+        <form id='filter' className='filter-options'>
           {Object.keys(inputs).map((key) => (
             <div key={key} className='filter-option'>
               <p className={key}>{key}</p>
@@ -88,7 +135,7 @@ export const Filter = (props) => {
               </div>
             </div>
           ))}
-        </div>
+        </form>
         <div className='filter-buttons'>
           <button onClick={restore} className='restore'>
             Restablecer
@@ -100,19 +147,17 @@ export const Filter = (props) => {
         </div>
       </div>
       <div className='filter-button-show'>
-        {
-          classFilter.status ? (
-            <button onClick={show}>
-              Ocultar búsqueda avanzada
-              <IoIosArrowDropupCircle className='icon' />
-            </button>
-          ) : (
-            <button onClick={show}>
-              Mostrar búsqueda avanzada
-              <IoIosArrowDropdownCircle className='icon' />
-            </button>
-          ) 
-        }
+        {classFilter.status ? (
+          <button onClick={show}>
+            Ocultar búsqueda avanzada
+            <IoIosArrowDropupCircle className='icon' />
+          </button>
+        ) : (
+          <button onClick={show}>
+            Mostrar búsqueda avanzada
+            <IoIosArrowDropdownCircle className='icon' />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Card } from '../components/card';
 
 export const List = (props) => {
+  const pokedex = useSelector((state) => state.Pokedex);
+  const likes = useSelector((state) => state.Likes);
   const [state, setState] = useState({
     index: 11,
     list: props.list,
@@ -10,7 +13,7 @@ export const List = (props) => {
   useEffect(() => {
     setState({
       ...state,
-      list: props.list
+      list: props.list,
     });
   }, [props]);
 

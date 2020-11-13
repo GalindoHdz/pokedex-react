@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   sortBottom,
   sortTop,
@@ -13,33 +14,71 @@ import {
 import { AiOutlineReload } from 'react-icons/ai';
 
 export const Sort = (props) => {
-  const [list] = useState(props.list);
+  // Lista de pokedex, likes y el dispatch de Redux
+  const pokedex = useSelector((state) => state.Pokedex);
+  const likes = useSelector((state) => state.Likes);
+  const dispatch = useDispatch();
 
+  // Funcion para guardar las listas temporales en Redux
   const handledChange = ({ target }) => {
-    switch (target.value) {
-      case 'bottom':
-        return props.handledSort(sortBottom(list));
-      case 'top':
-        return props.handledSort(sortTop(list));
-      case 'AZ':
-        return props.handledSort(sortAZ(list));
-      case 'ZA':
-        return props.handledSort(sortZA(list));
-      case 'heightBottom':
-        return props.handledSort(sortHeightBottom(list));
-      case 'heightTop':
-        return props.handledSort(sortHeightTop(list));
-      case 'weigthTop':
-        return props.handledSort(sortWeightTop(list));
-      case 'weigthBottom':
-        return props.handledSort(sortWeightBottom(list));
-      default:
-        return props.handledSort(list);
+    // Si el master es home, guardamos en Redux la pokedex temporal
+    if (props.master === 'Home') {
+      dispatch({
+        type: 'ADD_TEMP_POKEDEX',
+        payload: sort(target.value, pokedex),
+      });
+    }
+
+    // Si el master es likes, guardamos en Redux los likes temporales
+    if (props.master === 'Likes') {
+      dispatch({
+        type: 'ADD_TEMP_LIKES',
+        payload: sort(target.value, likes),
+      });
     }
   };
 
+  // Switch para determinar el tipo de ordenamiento
+  const sort = (type, list) => {
+    switch (type) {
+      case 'bottom':
+        return sortBottom(list);
+      case 'top':
+        return sortTop(list);
+      case 'AZ':
+        return sortAZ(list);
+      case 'ZA':
+        return sortZA(list);
+      case 'heightBottom':
+        return sortHeightBottom(list);
+      case 'heightTop':
+        return sortHeightTop(list);
+      case 'weigthTop':
+        return sortWeightTop(list);
+      case 'weigthBottom':
+        return sortWeightBottom(list);
+      default:
+        return list;
+    }
+  };
+
+  // Funcion para ordenar de manera aleatoria las listas
   const surprise = () => {
-    props.handledSort(sortRandom(list));
+    // Si el master es home, guardamos en Redux la pokedex temporal
+    if (props.master === 'Home') {
+      dispatch({
+        type: 'ADD_TEMP_POKEDEX',
+        payload: sortRandom(pokedex),
+      });
+    }
+
+    // Si el master es likes, guardamos en Redux los likes temporales
+    if (props.master === 'Likes') {
+      dispatch({
+        type: 'ADD_TEMP_LIKES',
+        payload: sortRandom(likes),
+      });
+    }
   };
 
   return (

@@ -13,7 +13,7 @@ export const Likes = () => {
         className='container'
         style={{ backgroundImage: `url(${bg_white})` }}>
         <h1>Likes</h1>
-        <Search master={'Likes'}/>
+        <Search master={'Likes'} />
         <Filter master={'Likes'} />
         <Sort master={'Likes'} />
         <List master={'Like'} />

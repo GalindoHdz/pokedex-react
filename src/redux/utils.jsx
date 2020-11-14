@@ -1,46 +1,58 @@
 // Reducer de pokedex
-export function Pokedex(state = [], action) {
+export function Pokedex(state = { list: [] }, action) {
   switch (action.type) {
     case 'ADD_POKEDEX':
-      return action.payload;
+      return {
+        ...state,
+        list: action.payload
+      };
     case 'REMOVE_POKEDEX':
-      return [];
+      return { list: [] };
     default:
       return state;
   }
 }
 
 // Reducer de temporal de pokedex
-export function TempPokedex(state = [], action) {
+export function TempPokedex(state = { list: [] }, action) {
   switch (action.type) {
     case 'ADD_TEMP_POKEDEX':
-      return action.payload;
+      return {
+        ...state,
+        list: action.payload
+      };
     case 'REMOVE_TEMP_POKEDEX':
-      return [];
+      return { list: [] };
     default:
       return state;
   }
 }
 
 // Reducer de lista de likes
-export function Likes(state = [], action) {
+export function Likes(state = { list: [] }, action) {
   switch (action.type) {
     case 'ADD_LIKES':
-      return action.payload;
+      return {
+        ...state,
+        list: action.payload
+      };
     case 'REMOVE_LIKES':
-      return [];
+      return { list: [] };
     default:
       return state;
   }
 }
 
 // Reducer de temporal de likes
-export function TempLikes(state = [], action) {
+export function TempLikes(state = { list: [] }, action) {
   switch (action.type) {
     case 'ADD_TEMP_LIKES':
-      return action.payload;
+      return {
+        ...state,
+        list: action.payload
+      };
     case 'REMOVE_TEMP_LIKES':
-      return [];
+      return { list: [] };
     default:
       return state;
   }

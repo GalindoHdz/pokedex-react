@@ -8,7 +8,7 @@ import { Pokemon } from './containers/pokemon';
 
 // Enrutador de la app
 export const Routes = () => {
-  const pokedex = useSelector((state) => state.Pokedex);
+  const pokedex = useSelector((state) => state.Pokedex.list);
   const dispatch = useDispatch();
 
   // Cargamos la pokedex, si no esta completa
@@ -16,12 +16,6 @@ export const Routes = () => {
     const getPokedex = async () => {
       if (pokedex.length < 893) {
         await addPokedex(pokedex, dispatch);
-
-        //Cargamos la pokedex temporal para mostrarla inicialmente
-        dispatch({
-          type: 'ADD_TEMP_POKEDEX',
-          payload: pokedex,
-        });
       }
     };
 

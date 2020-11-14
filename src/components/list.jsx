@@ -1,39 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Card } from '../components/card';
 
 export const List = (props) => {
-  const pokedex = useSelector((state) => state.Pokedex);
-  const likes = useSelector((state) => state.Likes);
-  const [state, setState] = useState({
-    index: 11,
-    list: props.list,
-  });
+  // Listas temporales de pokedex y likes, State index de la lista  
+  const [indexList, setIndexList] = useState(11);
+  const pokedex = useSelector((state) => state.TempPokedex.list);
+  const likes = useSelector((state) => state.TempLikes.list);
 
-  useEffect(() => {
-    setState({
-      ...state,
-      list: props.list,
-    });
-  }, [props]);
-
+  // Funcion para cargar mas pokemons
   const load = async () => {
+    // Posicion actual del scroll en Y
     const y = window.scrollY;
 
+    // Bloqueamos el scroll en la posicion actual
     window.onscroll = () => {
       window.scrollTo(0, y);
     };
 
-    state.index <= 887
-      ? setState({
-          ...state,
-          index: state.index + 12,
-        })
-      : setState({
-          ...state,
-          index: state.index + 5,
-        });
+    // Aumentamos en index de la lista
+    indexList <= 887
+      ? setIndexList(indexList + 12)
+      : setIndexList(indexList + 5);
 
+    // Desbloquemos el scroll al pasar 100ms
     setTimeout(() => {
       window.onscroll = null;
       window.scrollTo(0, y);
@@ -42,26 +32,55 @@ export const List = (props) => {
 
   return (
     <>
-      {state.list ? (
-        <div className='list'>
-          <div className='list-pokedex'>
-            {state.list.map((element, index) =>
-              index <= state.index ? (
-                <Card key={element.id} index={element.id - 1} />
-              ) : null
-            )}
+    {
+      props.master === 'Home' ? (
+        <>
+        {pokedex.length !== 0 ? (
+          <div className='list'>
+            <div className='list-pokedex'>
+              {pokedex.map((element, index) =>
+                index <= indexList ? (
+                  <Card key={element.id} pokemon={element} />
+                ) : null
+              )}
+            </div>
+            <div className='list-button'>
+              {indexList < pokedex.length ? (
+                <button onClick={load}>Cargar mas Pokemons</button>
+              ) : null}
+            </div>
           </div>
-          <div className='list-button'>
-            {state.index < state.list.length ? (
-              <button onClick={load}>Cargar mas Pokemons</button>
-            ) : null}
+        ) : (
+          <div className='list'>
+            <div className='list-pokedex'>Sin Pokemons</div>
           </div>
-        </div>
+        )}
+      </>
       ) : (
-        <div className='list'>
-          <div className='list-pokedex'>Sin Pokemons</div>
-        </div>
-      )}
+        <>
+        {likes.length !== 0 ? (
+          <div className='list'>
+            <div className='list-pokedex'>
+              {likes.map((element, index) =>
+                index <= indexList ? (
+                  <Card key={element.id} pokemon={element} />
+                ) : null
+              )}
+            </div>
+            <div className='list-button'>
+              {indexList < likes.length ? (
+                <button onClick={load}>Cargar mas Pokemons</button>
+              ) : null}
+            </div>
+          </div>
+        ) : (
+          <div className='list'>
+            <div className='list-pokedex'>Sin Pokemons</div>
+          </div>
+        )}
+      </>
+      )
+    }
     </>
   );
 };

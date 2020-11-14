@@ -8,9 +8,9 @@ import {
 } from 'react-icons/io';
 
 export const Filter = (props) => {
-  // Lista de pokedex, likes y el dispatch de Redux
-  const pokedex = useSelector((state) => state.Pokedex);
-  const likes = useSelector((state) => state.Likes);
+  // Listas de pokedex y likes, el dispatch de Redux
+  const pokedex = useSelector((state) => state.Pokedex.list);
+  const likes = useSelector((state) => state.Likes.list);
   const dispatch = useDispatch();
 
   // State de tipos de pokemon disponibles para filtrar lista

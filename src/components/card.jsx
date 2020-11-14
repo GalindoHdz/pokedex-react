@@ -1,41 +1,36 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLikes } from '../controllers/addLike';
+import { numberString } from '../controllers/toolsPokemon';
 import { NavLink } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 
 export const Card = (props) => {
-  const likes = useSelector((state) => state.Likes);
-  const pokedex = useSelector((state) => state.Pokedex);
+  // Listas permanentes y temporales de pokedex y likes, dispatch, State de like
+  const pokedex = useSelector((state) => state.Pokedex.list);
+  const tempPokedex = useSelector((state) => state.TempPokedex.list);
+  const likes = useSelector((state) => state.Likes.list);
+  const tempLikes = useSelector((state) => state.TempLikes.list);
   const dispatch = useDispatch();
-  const [state, setState] = useState({
-    id: pokedex[props.index].id,
-    name: pokedex[props.index].name,
-    number: pokedex[props.index].number,
-    image: pokedex[props.index].image,
-    types: pokedex[props.index].types,
-    like: pokedex[props.index].like,
-  });
-  const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${state.image}`;
+  const [like, setLike] = useState(props.pokemon.like);
 
+  // Funcion para agregar el pokemon a la lista de likes,
+  // agregar el cambio en la pokedex y cambiar el state de like
   const addLike = () => {
-    addLikes(state.id, likes, pokedex, dispatch);
-    setState({
-      ...state,
-      like: !state.like,
-    });
+    addLikes(props.pokemon.id, likes, pokedex, tempLikes, tempPokedex, dispatch);
+    setLike(!like);
   };
 
   return (
     <div className='card'>
-      <NavLink exact to={`/Pokemon/${state.name}`}>
-        <img src={image} alt='pokemon' />
+      <NavLink exact to={`/Pokemon/${props.pokemon.name}`}>
+        <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numberString(props.pokemon.id)}.png`} alt='pokemon' />
         <div>
-          <h5>N.°{state.number}</h5>
-          <h3>{state.name}</h3>
+          <h5>N.°{numberString(props.pokemon.id)}</h5>
+          <h3>{props.pokemon.name}</h3>
           <div>
-            {state.types.map((type) => (
-              <p className={type} key={`${state.id} ${type}`}>
+            {props.pokemon.types.map((type) => (
+              <p className={type} key={`${props.pokemon.id} ${type}`}>
                 {type}
               </p>
             ))}
@@ -43,7 +38,7 @@ export const Card = (props) => {
         </div>
       </NavLink>
       <div>
-        {state.like ? (
+        {like ? (
           <button onClick={addLike}>
             <FaHeart className='like-true' />
           </button>

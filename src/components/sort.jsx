@@ -14,9 +14,9 @@ import {
 import { AiOutlineReload } from 'react-icons/ai';
 
 export const Sort = (props) => {
-  // Lista de pokedex, likes y el dispatch de Redux
-  const pokedex = useSelector((state) => state.Pokedex);
-  const likes = useSelector((state) => state.Likes);
+  // Listas de pokedex y likes, el dispatch de Redux
+  const pokedex = useSelector((state) => state.TempPokedex.list);
+  const likes = useSelector((state) => state.TempLikes.list);
   const dispatch = useDispatch();
 
   // Funcion para guardar las listas temporales en Redux
@@ -36,6 +36,9 @@ export const Sort = (props) => {
         payload: sort(target.value, likes),
       });
     }
+
+    // Ejecutando funcion reload del master
+    props.reload();
   };
 
   // Switch para determinar el tipo de ordenamiento
@@ -79,6 +82,9 @@ export const Sort = (props) => {
         payload: sortRandom(likes),
       });
     }
+
+    // Ejecutando funcion reload del master
+    props.reload();
   };
 
   return (

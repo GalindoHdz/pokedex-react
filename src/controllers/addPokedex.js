@@ -1,66 +1,60 @@
 import PokeApi from '../services/poke-api';
 
+// Funcion para cargar los pokemons en la pokedex
 export const addPokedex = async (pokedex, dispatch) => {
+  // Si la pokedex no esta completa
   while (pokedex.length < 893) {
+    // Se realizan la carga de los pokemons desde el ultimo registrado en la pokedex 
     for (let index = pokedex.length + 1; index <= 893; index++) {
+      // Traemos los datos del pokemon en el API
       const data = await PokeApi.getPokemon(index);
-      // const species = await PokeApi.getSpecies(index);
-      // const chain = species.url
-      //   ? await PokeApi.getEvolutionChain(species.url)
-      //   : null;
+
+      // Extraemos los datos necesarios del pokemon 
       const pokemon = {
-        // number: numberString(index),
-        // image: `${numberString(index)}.png`,
         id: data.id,
         name: data.name,
         types: data.types.map((type) => type.type.name),
         like: false,
         height: data.height,
         weight: data.weight,
-        // stats: data.stats.map((stat) => ({
-        //   name: stat.stat.name,
-        //   value: stat.base_stat,
-        // })),
-        // chainEvolution: chain ? extract(chain) : null,
-        // description: species.description,
+        stats: data.stats.map((stat) => ({
+          name: stat.stat.name,
+          value: stat.base_stat,
+        })),
       };
 
+      // Insertamos el pokemon en la pokedex
       pokedex.push(pokemon);
 
+      // Cada 100 pokemons se guarda en Redux
       if (pokedex.length % 100 === 0) {
+        // Cargamos la pokedex en redux
         dispatch({
           type: 'ADD_POKEDEX',
           payload: pokedex,
         });
+
+        //Cargamos la pokedex temporal en redux
+        dispatch({
+          type: 'ADD_TEMP_POKEDEX',
+          payload: pokedex,
+        });
       }
 
+      // Los ultimmos 93 pokemons se cargan a Redux
       if (pokedex.length === 893) {
+        // Cargamos la pokedex en redux
         dispatch({
           type: 'ADD_POKEDEX',
+          payload: pokedex,
+        });
+        
+        //Cargamos la pokedex temporal en redux
+        dispatch({
+          type: 'ADD_TEMP_POKEDEX',
           payload: pokedex,
         });
       }
     }
   }
 };
-
-// const numberString = (number) => {
-//   const str = '' + number;
-//   const pad = '000';
-//   return pad.substring(0, pad.length - str.length) + str;
-// };
-
-// const extract = (chain) => {
-//   let evoChain = {
-//     name: chain.species.name,
-//     evolution: [],
-//   };
-
-//   if (chain.evolves_to) {
-//     Object.entries(chain.evolves_to).map((element) =>
-//       evoChain.evolution.push(extract(element[1]))
-//     );
-//   }
-
-//   return evoChain;
-// };

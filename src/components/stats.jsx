@@ -1,7 +1,9 @@
 import React from 'react';
 
 export const Stats = (props) => {
+  // Funcion para obtener los arreglos de stats
   const fillMap = (stats) => {
+    // Lista de stats ocupados
     let listStat = {
       PS: [],
       Ataque: [],
@@ -11,6 +13,7 @@ export const Stats = (props) => {
       Velocidad: [],
     };
 
+    // Listas de stats vacios
     let listFill = {
       PS: [],
       Ataque: [],
@@ -20,7 +23,9 @@ export const Stats = (props) => {
       Velocidad: [],
     };
 
+    // Recorremos las para saber el numero de espacios ocupados y vacios
     Object.keys(listStat).forEach((element, index) => {
+      // Espacios usados
       for (
         let i = 0;
         i < Math.ceil(stats[index].value / 10) - 1 && i < 15;
@@ -29,6 +34,7 @@ export const Stats = (props) => {
         listStat[element].push(i);
       }
 
+      // Espacios vacios
       for (let i = 14; i >= Math.ceil(stats[index].value / 10) - 1; i--) {
         listFill[element].push(i);
       }
@@ -40,6 +46,7 @@ export const Stats = (props) => {
     };
   };
 
+  // Listas de stats
   const lists = fillMap(props.stats);
 
   return (

@@ -1465,7 +1465,7 @@ a {
     width: 100%;
     text-align: center;
   }
-  .pokemon .pokemon-evolitions {
+  .pokemon .pokemon-evolutions {
     width: 100%;
     max-width: 880px;
     display: flex;
@@ -1476,7 +1476,7 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .pokemon .pokemon-evolitions .arrow {
+  .pokemon .pokemon-evolutions .arrow {
     color: white;
     font-size: 30px;
     position: relative;
@@ -1630,7 +1630,7 @@ a {
     width: 100%;
     text-align: center;
   }
-  .pokemon .pokemon-evolitions {
+  .pokemon .pokemon-evolutions {
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -1641,7 +1641,7 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .pokemon .pokemon-evolitions .arrow {
+  .pokemon .pokemon-evolutions .arrow {
     color: white;
     font-size: 30px;
     transform: rotate(90deg);
@@ -1794,7 +1794,7 @@ a {
     width: 100%;
     text-align: center;
   }
-  .pokemon .pokemon-evolitions {
+  .pokemon .pokemon-evolutions {
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -1805,7 +1805,7 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .pokemon .pokemon-evolitions .arrow {
+  .pokemon .pokemon-evolutions .arrow {
     color: white;
     font-size: 30px;
     transform: rotate(90deg);
@@ -1958,7 +1958,7 @@ a {
     width: 100%;
     text-align: center;
   }
-  .pokemon .pokemon-evolitions {
+  .pokemon .pokemon-evolutions {
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -1969,7 +1969,7 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .pokemon .pokemon-evolitions .arrow {
+  .pokemon .pokemon-evolutions .arrow {
     color: white;
     font-size: 30px;
     transform: rotate(90deg);

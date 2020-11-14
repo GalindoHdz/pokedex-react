@@ -5,8 +5,8 @@ import { BiSearch } from 'react-icons/bi';
 
 export const Search = (props) => {
   // Lista de pokedex, likes y el dispatch de Redux
-  const pokedex = useSelector((state) => state.Pokedex);
-  const likes = useSelector((state) => state.Likes);
+  const pokedex = useSelector((state) => state.Pokedex.list);
+  const likes = useSelector((state) => state.Likes.list);
   const dispatch = useDispatch();
 
   // State de la palabra del input

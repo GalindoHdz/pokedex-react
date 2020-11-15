@@ -12,8 +12,8 @@ export const Likes = () => {
 
   // Funcion para recargar el componente
   const handledReload = () => {
-    setReload({...reload});
-  }
+    setReload({ ...reload });
+  };
 
   return (
     <div className='background' style={{ backgroundImage: `url(${bg_black})` }}>
@@ -23,7 +23,7 @@ export const Likes = () => {
         <h1>Likes</h1>
         <Search master={'Likes'} />
         <Filter master={'Likes'} />
-        <Sort master={'Likes'} reload={handledReload}/>
+        <Sort master={'Likes'} reload={handledReload} />
         <List master={'Like'} />
       </div>
     </div>

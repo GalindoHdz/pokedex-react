@@ -17,7 +17,7 @@ import { Circule } from '../components/circule';
 
 export const Pokemon = (props) => {
   // Listas permanentes y temporales de pokedex y likes, dispatch, datos de pokemon, ids de pokemons siguiente y anterior
-  // State de like, State de species 
+  // State de like, State de species
   const pokedex = useSelector((state) => state.Pokedex.list);
   const tempPokedex = useSelector((state) => state.TempPokedex.list);
   const likes = useSelector((state) => state.Likes.list);
@@ -29,7 +29,7 @@ export const Pokemon = (props) => {
   const [like, setLike] = useState(pokemon.like);
   const [species, setSpecies] = useState({
     description: null,
-    chainEvolution: []
+    chainEvolution: [],
   });
 
   // Carga de datos de species para descripcion y cadena de evolucion
@@ -40,12 +40,12 @@ export const Pokemon = (props) => {
         ? await PokeApi.getEvolutionChain(species.url)
         : null;
       chainObject = chainObject ? extractChain(chainObject) : null;
-  
+
       setSpecies({
         chainEvolution: transformChain(chainObject),
         description: species.description,
       });
-    }
+    };
 
     const extractChain = (chainObject) => {
       let evoChain = {
@@ -64,11 +64,13 @@ export const Pokemon = (props) => {
 
     const transformChain = (chainObject) => {
       let chainArray = [];
-  
+
       const extractArray = (obj) => {
         Object.entries(obj).forEach((element) => {
           if (element[0] === 'name') {
-            chainArray.push(pokedex.find((pokemon) => pokemon.name === element[1]));
+            chainArray.push(
+              pokedex.find((pokemon) => pokemon.name === element[1])
+            );
           } else if (element[0] === 'evolution') {
             if (element[1].length !== 0) {
               chainArray.push('arrow');
@@ -79,13 +81,15 @@ export const Pokemon = (props) => {
           }
         });
       };
-  
+
       if (chainObject !== null) {
         extractArray(chainObject);
       }
-  
+
       return chainArray;
     };
+
+    setLike(pokemon.like);
 
     extractSpecies();
   }, [pokemon, pokedex]);
@@ -104,12 +108,16 @@ export const Pokemon = (props) => {
         <div className='pokemon-neighbors'>
           <NavLink exact to={`/Pokemon/${pokemonPrev.name}`}>
             <IoIosArrowDropleftCircle className='pokemon-neighbors-icon' />
-            <p className='pokemon-neighbors-number'>{`N.º ${numberString(pokemonPrev.id)}`}</p>
+            <p className='pokemon-neighbors-number'>{`N.º ${numberString(
+              pokemonPrev.id
+            )}`}</p>
             <p className='pokemon-neighbors-name'>{pokemonPrev.name}</p>
           </NavLink>
           <NavLink exact to={`/Pokemon/${pokemonNext.name}`}>
             <p className='pokemon-neighbors-name'>{pokemonNext.name}</p>
-            <p className='pokemon-neighbors-number'>{`N.º ${numberString(pokemonNext.id)}`}</p>
+            <p className='pokemon-neighbors-number'>{`N.º ${numberString(
+              pokemonNext.id
+            )}`}</p>
             <IoIosArrowDroprightCircle className='pokemon-neighbors-icon' />
           </NavLink>
         </div>
@@ -119,7 +127,7 @@ export const Pokemon = (props) => {
             <p className='details-number'>N.° {numberString(pokemon.id)}</p>
           </div>
           <div className='pokemon-details-like'>
-            {pokemon.like ? (
+            {like ? (
               <button onClick={addLike}>
                 <FaHeart className='like-true' />
               </button>
@@ -130,7 +138,12 @@ export const Pokemon = (props) => {
             )}
           </div>
           <div className='pokemon-details-basic'>
-            <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numberString(pokemon.id)}.png`} alt='pokemon' />
+            <img
+              src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numberString(
+                pokemon.id
+              )}.png`}
+              alt='pokemon'
+            />
             <Stats stats={pokemon.stats} />
           </div>
           <div className='pokemon-details-advance'>
@@ -168,5 +181,5 @@ export const Pokemon = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 };

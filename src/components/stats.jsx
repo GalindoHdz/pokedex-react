@@ -23,22 +23,25 @@ export const Stats = (props) => {
       Velocidad: [],
     };
 
-    // Recorremos las para saber el numero de espacios ocupados y vacios
-    Object.keys(listStat).forEach((element, index) => {
-      // Espacios usados
-      for (
-        let i = 0;
-        i < Math.ceil(stats[index].value / 10) - 1 && i < 15;
-        i++
-      ) {
-        listStat[element].push(i);
-      }
+    // Verificamos que se tengan stats del pokemon
+    if (stats.length !== 0) {
+      // Recorremos las para saber el numero de espacios ocupados y vacios
+      Object.keys(listStat).forEach((element, index) => {
+        // Espacios usados
+        for (
+          let i = 0;
+          i < Math.ceil(stats[index].value / 10) - 1 && i < 15;
+          i++
+        ) {
+          listStat[element].push(i);
+        }
 
-      // Espacios vacios
-      for (let i = 14; i >= Math.ceil(stats[index].value / 10) - 1; i--) {
-        listFill[element].push(i);
-      }
-    });
+        // Espacios vacios
+        for (let i = 14; i >= Math.ceil(stats[index].value / 10) - 1; i--) {
+          listFill[element].push(i);
+        }
+      });
+    }
 
     return {
       listStat,

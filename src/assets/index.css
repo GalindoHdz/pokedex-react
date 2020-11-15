@@ -1461,7 +1461,7 @@ a {
   .pokemon .pokemon-details .pokemon-details-advance .description-details-advance-types div p {
     color: white;
     position: relative;
-    bottom: 7px;
+    bottom: 5px;
     width: 100%;
     text-align: center;
   }

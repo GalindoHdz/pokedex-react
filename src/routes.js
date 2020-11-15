@@ -9,10 +9,14 @@ import { Pokemon } from './containers/pokemon';
 // Enrutador de la app
 export const Routes = () => {
   const pokedex = useSelector((state) => state.Pokedex.list);
+  const likes = useSelector((state) => state.Likes.list);
+  const tempPokedex = useSelector((state) => state.Pokedex.list);
+  const tempLikes = useSelector((state) => state.Likes.list);
   const dispatch = useDispatch();
 
   // Cargamos la pokedex, si no esta completa
   useEffect(() => {
+    // Funcion para cargar la pokedex
     const getPokedex = async () => {
       if (pokedex.length < 893) {
         await addPokedex(pokedex, dispatch);
@@ -20,7 +24,7 @@ export const Routes = () => {
     };
 
     getPokedex();
-  }, [pokedex, dispatch]);
+  }, [pokedex, likes, tempPokedex, tempLikes, dispatch]);
 
   return (
     <Switch>

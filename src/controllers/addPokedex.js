@@ -4,12 +4,12 @@ import PokeApi from '../services/poke-api';
 export const addPokedex = async (pokedex, dispatch) => {
   // Si la pokedex no esta completa
   while (pokedex.length < 893) {
-    // Se realizan la carga de los pokemons desde el ultimo registrado en la pokedex 
+    // Se realizan la carga de los pokemons desde el ultimo registrado en la pokedex
     for (let index = pokedex.length + 1; index <= 893; index++) {
       // Traemos los datos del pokemon en el API
       const data = await PokeApi.getPokemon(index);
 
-      // Extraemos los datos necesarios del pokemon 
+      // Extraemos los datos necesarios del pokemon
       const pokemon = {
         id: data.id,
         name: data.name,
@@ -48,7 +48,7 @@ export const addPokedex = async (pokedex, dispatch) => {
           type: 'ADD_POKEDEX',
           payload: pokedex,
         });
-        
+
         //Cargamos la pokedex temporal en redux
         dispatch({
           type: 'ADD_TEMP_POKEDEX',

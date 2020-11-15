@@ -1,22 +1,32 @@
 // Root para agregar o eliminar pokemon de las listas de redux
-export const addLikes = (id, listLikes, pokedex, tempLikes, tempPokedex,  dispatch) => {
-  listPermanents(id, listLikes, pokedex, dispatch);
-  listTemporals(id, tempLikes, tempPokedex, dispatch);
+export const addLikes = (
+  id,
+  listLikes,
+  pokedex,
+  tempLikes,
+  tempPokedex,
+  dispatch
+) => {
+  listPermanent(id, listLikes, pokedex, dispatch);
+  listTemporary(id, tempLikes, tempPokedex, dispatch);
 };
 
 // Funcion para agregar o eliminar pokemon a la listas permanentes
-const listPermanents = (id, listLikes, pokedex, dispatch) => {
+const listPermanent = (id, listLikes, pokedex, dispatch) => {
   // Buscamos y extraemos el pokemon si existe en la lista de likes y en el pokedex
   const like = listLikes.find((element) => element.id === id);
   const pokemon = pokedex.find((element) => element.id === id);
-  
+
   // Invertimos el atributo like del pokemon
   pokemon.like = !pokemon.like;
 
   // Si existe el pokemon en la lista de likes realizamos lo siguiente
   if (like) {
     // Eliminamos el pokemon de la lista de likes
-    listLikes.splice(listLikes.findIndex((element) => element.id === id), 1);
+    listLikes.splice(
+      listLikes.findIndex((element) => element.id === id),
+      1
+    );
 
     // Actualizamos el pokemon en la pokedex
     pokedex[pokedex.findIndex((element) => element.id === id)] = pokemon;
@@ -42,7 +52,7 @@ const listPermanents = (id, listLikes, pokedex, dispatch) => {
 
   // Ordenamos la lista por ID del pokemon
   listLikes.sort((a, b) => a.id - b.id);
-  
+
   // Actualizamos el pokemon en la Pokedex
   pokedex[pokedex.findIndex((element) => element.id === id)] = pokemon;
 
@@ -60,18 +70,21 @@ const listPermanents = (id, listLikes, pokedex, dispatch) => {
 };
 
 // Funcion para agregar o eliminar pokemon a la listas temporales
-const listTemporals = (id, listLikes, pokedex, dispatch) => {
+const listTemporary = (id, listLikes, pokedex, dispatch) => {
   // Buscamos y extraemos el pokemon si existe en la lista de likes y en el pokedex
   const like = listLikes.find((element) => element.id === id);
   const pokemon = pokedex.find((element) => element.id === id);
-  
+
   // Invertimos el atributo like del pokemon
   pokemon.like = !pokemon.like;
 
   // Si existe el pokemon en la lista de likes realizamos lo siguiente
   if (like) {
     // Eliminamos el pokemon de la lista de likes
-    listLikes.splice(listLikes.findIndex((element) => element.id === id), 1);
+    listLikes.splice(
+      listLikes.findIndex((element) => element.id === id),
+      1
+    );
 
     // Actualizamos el pokemon en la pokedex
     pokedex[pokedex.findIndex((element) => element.id === id)] = pokemon;
@@ -97,7 +110,7 @@ const listTemporals = (id, listLikes, pokedex, dispatch) => {
 
   // Ordenamos la lista por ID del pokemon
   listLikes.sort((a, b) => a.id - b.id);
-  
+
   // Actualizamos el pokemon en la Pokedex
   pokedex[pokedex.findIndex((element) => element.id === id)] = pokemon;
 

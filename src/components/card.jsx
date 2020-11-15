@@ -17,14 +17,26 @@ export const Card = (props) => {
   // Funcion para agregar el pokemon a la lista de likes,
   // agregar el cambio en la pokedex y cambiar el state de like
   const addLike = () => {
-    addLikes(props.pokemon.id, likes, pokedex, tempLikes, tempPokedex, dispatch);
+    addLikes(
+      props.pokemon.id,
+      likes,
+      pokedex,
+      tempLikes,
+      tempPokedex,
+      dispatch
+    );
     setLike(!like);
   };
 
   return (
     <div className='card'>
       <NavLink exact to={`/Pokemon/${props.pokemon.name}`}>
-        <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numberString(props.pokemon.id)}.png`} alt='pokemon' />
+        <img
+          src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${numberString(
+            props.pokemon.id
+          )}.png`}
+          alt='pokemon'
+        />
         <div>
           <h5>N.°{numberString(props.pokemon.id)}</h5>
           <h3>{props.pokemon.name}</h3>

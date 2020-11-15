@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Card } from '../components/card';
 
 export const List = (props) => {
-  // Listas temporales de pokedex y likes, State index de la lista  
+  // Listas temporales de pokedex y likes, State index de la lista
   const [indexList, setIndexList] = useState(11);
   const pokedex = useSelector((state) => state.TempPokedex.list);
   const likes = useSelector((state) => state.TempLikes.list);
@@ -32,55 +32,53 @@ export const List = (props) => {
 
   return (
     <>
-    {
-      props.master === 'Home' ? (
+      {props.master === 'Home' ? (
         <>
-        {pokedex.length !== 0 ? (
-          <div className='list'>
-            <div className='list-pokedex'>
-              {pokedex.map((element, index) =>
-                index <= indexList ? (
-                  <Card key={element.id} pokemon={element} />
-                ) : null
-              )}
+          {pokedex.length !== 0 ? (
+            <div className='list'>
+              <div className='list-pokedex'>
+                {pokedex.map((element, index) =>
+                  index <= indexList ? (
+                    <Card key={element.id} pokemon={element} />
+                  ) : null
+                )}
+              </div>
+              <div className='list-button'>
+                {indexList < pokedex.length ? (
+                  <button onClick={load}>Cargar mas Pokemons</button>
+                ) : null}
+              </div>
             </div>
-            <div className='list-button'>
-              {indexList < pokedex.length ? (
-                <button onClick={load}>Cargar mas Pokemons</button>
-              ) : null}
+          ) : (
+            <div className='list'>
+              <div className='list-pokedex'>Sin Pokemons</div>
             </div>
-          </div>
-        ) : (
-          <div className='list'>
-            <div className='list-pokedex'>Sin Pokemons</div>
-          </div>
-        )}
-      </>
+          )}
+        </>
       ) : (
         <>
-        {likes.length !== 0 ? (
-          <div className='list'>
-            <div className='list-pokedex'>
-              {likes.map((element, index) =>
-                index <= indexList ? (
-                  <Card key={element.id} pokemon={element} />
-                ) : null
-              )}
+          {likes.length !== 0 ? (
+            <div className='list'>
+              <div className='list-pokedex'>
+                {likes.map((element, index) =>
+                  index <= indexList ? (
+                    <Card key={element.id} pokemon={element} />
+                  ) : null
+                )}
+              </div>
+              <div className='list-button'>
+                {indexList < likes.length ? (
+                  <button onClick={load}>Cargar mas Pokemons</button>
+                ) : null}
+              </div>
             </div>
-            <div className='list-button'>
-              {indexList < likes.length ? (
-                <button onClick={load}>Cargar mas Pokemons</button>
-              ) : null}
+          ) : (
+            <div className='list'>
+              <div className='list-pokedex'>Sin Pokemons</div>
             </div>
-          </div>
-        ) : (
-          <div className='list'>
-            <div className='list-pokedex'>Sin Pokemons</div>
-          </div>
-        )}
-      </>
-      )
-    }
+          )}
+        </>
+      )}
     </>
   );
 };

@@ -4,7 +4,7 @@ export function Pokedex(state = { list: [] }, action) {
     case 'ADD_POKEDEX':
       return {
         ...state,
-        list: action.payload
+        list: action.payload,
       };
     case 'REMOVE_POKEDEX':
       return { list: [] };
@@ -19,7 +19,7 @@ export function TempPokedex(state = { list: [] }, action) {
     case 'ADD_TEMP_POKEDEX':
       return {
         ...state,
-        list: action.payload
+        list: action.payload,
       };
     case 'REMOVE_TEMP_POKEDEX':
       return { list: [] };
@@ -34,7 +34,7 @@ export function Likes(state = { list: [] }, action) {
     case 'ADD_LIKES':
       return {
         ...state,
-        list: action.payload
+        list: action.payload,
       };
     case 'REMOVE_LIKES':
       return { list: [] };
@@ -49,7 +49,7 @@ export function TempLikes(state = { list: [] }, action) {
     case 'ADD_TEMP_LIKES':
       return {
         ...state,
-        list: action.payload
+        list: action.payload,
       };
     case 'REMOVE_TEMP_LIKES':
       return { list: [] };

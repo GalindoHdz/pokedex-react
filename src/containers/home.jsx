@@ -12,8 +12,8 @@ export const Home = () => {
 
   // Funcion para recargar el componente
   const handledReload = () => {
-    setReload({...reload});
-  }
+    setReload({ ...reload });
+  };
 
   return (
     <div className='background' style={{ backgroundImage: `url(${bg_black})` }}>
@@ -23,7 +23,7 @@ export const Home = () => {
         <h1>Pokédex</h1>
         <Search master={'Home'} />
         <Filter master={'Home'} />
-        <Sort master={'Home'} reload={handledReload}/>
+        <Sort master={'Home'} reload={handledReload} />
         <List master={'Home'} />
       </div>
     </div>

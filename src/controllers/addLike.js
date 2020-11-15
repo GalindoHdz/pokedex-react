@@ -17,9 +17,6 @@ const listPermanent = (id, listLikes, pokedex, dispatch) => {
   const like = listLikes.find((element) => element.id === id);
   const pokemon = pokedex.find((element) => element.id === id);
 
-  // Invertimos el atributo like del pokemon
-  pokemon.like = !pokemon.like;
-
   // Si existe el pokemon en la lista de likes realizamos lo siguiente
   if (like) {
     // Eliminamos el pokemon de la lista de likes
@@ -27,6 +24,9 @@ const listPermanent = (id, listLikes, pokedex, dispatch) => {
       listLikes.findIndex((element) => element.id === id),
       1
     );
+
+    // Colocamos el like del pokemon en false
+    pokemon.like = false;
 
     // Actualizamos el pokemon en la pokedex
     pokedex[pokedex.findIndex((element) => element.id === id)] = pokemon;
@@ -46,6 +46,9 @@ const listPermanent = (id, listLikes, pokedex, dispatch) => {
     // Terminamos la operacion de la funcion
     return;
   }
+
+  // Colocamos el like del pokemon en true
+  pokemon.like = true;
 
   // En caso de que no exita el pokemon en la lista de likes lo agregamos en la lista
   listLikes.push(pokemon);
@@ -86,6 +89,9 @@ const listTemporary = (id, listLikes, pokedex, dispatch) => {
       1
     );
 
+    // Colocamos el like del pokemon en false
+    pokemon.like = false;
+
     // Actualizamos el pokemon en la pokedex
     pokedex[pokedex.findIndex((element) => element.id === id)] = pokemon;
 
@@ -104,6 +110,9 @@ const listTemporary = (id, listLikes, pokedex, dispatch) => {
     // Terminamos la operacion de la funcion
     return;
   }
+
+  // Colocamos el like del pokemon en false
+  pokemon.like = true;
 
   // En caso de que no exita el pokemon en la lista de likes lo agregamos en la lista
   listLikes.push(pokemon);

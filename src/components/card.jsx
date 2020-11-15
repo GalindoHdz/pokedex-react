@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLikes } from '../controllers/addLike';
 import { numberString } from '../controllers/toolsPokemon';
@@ -12,7 +12,12 @@ export const Card = (props) => {
   const likes = useSelector((state) => state.Likes.list);
   const tempLikes = useSelector((state) => state.TempLikes.list);
   const dispatch = useDispatch();
-  const [like, setLike] = useState(props.pokemon.like);
+  const [like, setLike] = useState(false);
+
+  // Cargamos el estado del like del pokemon
+  useEffect(() => {
+    setLike(props.pokemon.like);
+  }, [props.pokemon.like]);
 
   // Funcion para agregar el pokemon a la lista de likes,
   // agregar el cambio en la pokedex y cambiar el state de like
@@ -25,6 +30,7 @@ export const Card = (props) => {
       tempPokedex,
       dispatch
     );
+
     setLike(!like);
   };
 

@@ -379,6 +379,7 @@ a {
 }
 .list .list-pokedex {
   width: 880px;
+  min-height: 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

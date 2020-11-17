@@ -1,11 +1,13 @@
 .list {
   width: 100%;
+  min-height: calc(100vh - 459px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
+
   .list-pokedex {
-    width: 880px;
+    width: 865px;
     min-height: 300px;
     display: flex;
     flex-wrap: wrap;

@@ -29,7 +29,7 @@ a {
 @media only screen and (min-width: 769px) {
   .background {
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 57px);
     padding-top: 57px;
     display: flex;
     flex-wrap: wrap;
@@ -61,7 +61,7 @@ a {
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .background {
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 57px);
     padding-top: 57px;
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +92,7 @@ a {
 @media screen and (max-width: 425px) {
   .background {
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 57px);
     padding-top: 57px;
     display: flex;
     flex-wrap: wrap;
@@ -373,12 +373,13 @@ a {
 
 .list {
   width: 100%;
+  min-height: calc(100vh - 459px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .list .list-pokedex {
-  width: 880px;
+  width: 865px;
   min-height: 300px;
   display: flex;
   flex-wrap: wrap;
@@ -473,11 +474,13 @@ a {
   font-size: 22px;
   color: #e73f3f;
   transition: 300ms;
+  background-color: transparent;
 }
 .card div button .like-false {
   font-size: 22px;
   color: #bbbbbb;
   transition: 300ms;
+  background-color: transparent;
 }
 
 @media only screen and (min-width: 769px) {
@@ -1398,11 +1401,13 @@ a {
     font-size: 25px;
     color: #e73f3f;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-like button .like-false {
     font-size: 25px;
     color: #bbbbbb;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-basic {
     width: 50%;
@@ -1559,11 +1564,13 @@ a {
     font-size: 25px;
     color: #e73f3f;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-like button .like-false {
     font-size: 25px;
     color: #bbbbbb;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-basic {
     width: 100%;
@@ -1723,11 +1730,13 @@ a {
     font-size: 25px;
     color: #e73f3f;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-like button .like-false {
     font-size: 25px;
     color: #bbbbbb;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-basic {
     width: 100%;
@@ -1887,11 +1896,13 @@ a {
     font-size: 25px;
     color: #e73f3f;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-like button .like-false {
     font-size: 25px;
     color: #bbbbbb;
     transition: 300ms;
+    background-color: transparent;
   }
   .pokemon .pokemon-details .pokemon-details-basic {
     width: 100%;
